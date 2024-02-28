@@ -1,0 +1,26 @@
+{
+    "Activos": {
+        "asda123": {
+            "CodTransaccion": "1231",
+            "NroFormulario": "21323",
+            "CodCampus": "asda123",
+            "Marca": "LG",
+            "Categoria": "ELECTRODOMESTICO",
+            "Tipo": "CPU",
+            "VlrUnitario": "213123",
+            "Proveedor": "dsasda",
+            "NroSerial": "1231231",
+            "Empresaresponsable": "adsad",
+            "Estado": "No Asignado",
+            "HistorialActivo": {
+                "Nrold": "",
+                "Fecha": "",
+                "tipoMov": "",
+                "idRespMov": ""
+            }
+        }
+    },
+    "Personas": {},
+    "Zonas": {},
+    "Asignacion": {}
+}

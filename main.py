@@ -1,8 +1,19 @@
 import os
 import json
 import modulos.menus as mn
+import modulos.corefile as cf
 import sys
+import funciones.funcionesActivos as fa
+dataa = {
+    'Activos':{},
+    'Personas':{},
+    'Zonas':{},
+    'Asignacion':{},
+}
+def main():
+    cf.checkFile("dataa.json",dataa)
 if __name__ == "__main__":
+    main()
     Runpro = True
     while Runpro:
         op = mn.menuPrincipal()
@@ -11,7 +22,13 @@ if __name__ == "__main__":
             while Run1:
                 op1 = mn.menuAct()
                 if op1 == "1":
-                    pass
+                    isrun11 = True
+                    while isrun11:
+                        fa.Addactivos(dataa)
+                        rta1 = 'x'
+                        while (rta1 not in ['S','s','']):
+                            rta1 = input('Desea Regresar agregar otro activo Si(S/s) Enter(No) :')
+                            isrun11 = bool(rta1)
                 if op1 == "2":
                     pass
                 if op1 == "3":
