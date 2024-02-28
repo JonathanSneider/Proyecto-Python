@@ -1,16 +1,16 @@
 {
     "Activos": {
-        "asda123": {
-            "CodTransaccion": "1231",
-            "NroFormulario": "21323",
-            "CodCampus": "asda123",
+        "asdad": {
+            "CodTransaccion": "12321",
+            "NroFormulario": "adsad",
+            "CodCampus": "asdad",
             "Marca": "LG",
-            "Categoria": "ELECTRODOMESTICO",
-            "Tipo": "CPU",
-            "VlrUnitario": "213123",
-            "Proveedor": "dsasda",
-            "NroSerial": "1231231",
-            "Empresaresponsable": "adsad",
+            "Categoria": "JUEGO",
+            "Tipo": "",
+            "VlrUnitario": 123123.0,
+            "Proveedor": "dasda",
+            "NroSerial": "dada",
+            "Empresaresponsable": "dada",
             "Estado": "No Asignado",
             "HistorialActivo": {
                 "Nrold": "",

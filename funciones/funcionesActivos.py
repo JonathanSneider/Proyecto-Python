@@ -40,7 +40,15 @@ def Addactivos(activosdata: dict):
         tipoo = ""
     else:
         tipoo = VRF(tipo,"el","tipo")
-    VlrUnitario = input('Ingrese el valor unitario : ')
+    isrunVlr = True
+    while isrunVlr:
+        try:
+            VlrUnitario = float(input('Ingrese el valor unitario : '))
+        except ValueError:
+            print('Ingrese un numero valido')
+            os.system('pause')
+        else:
+            isrunVlr = False
     Proveedor = input('Ingrese el proveedor del activo : ')
     NroSerial = input('Ingrese el codigo serial : ')
     Empresaresponsable = input('Ingrese la Empresa responsable del activo : ')
@@ -67,7 +75,23 @@ def Addactivos(activosdata: dict):
         }
     }
     activosdata['Activos'].update({CodCampus:Activo})
-    cf.createData('dataa.json',activosdata)
+    cf.createData('data.json',activosdata)
+    
+def updateActivos(activosdata:dict):
+    os.system('cls')
+    Id = input('Ingrese el codigo del activo : ')
+    for key in activosdata['Activos'].keys():
+        if Id not in activosdata['Activos']:
+            print('El codigo no se encuentra registrado')
+            os.system('pause')
+            break
+    else:
+        for key,value in activosdata['Activos'][Id].keys():
+            if(bool(input(f'Desea modificar el {key} s(si) o Enter No'))):
+                os.system('cls')
+                activosdata['Activos'][key] = input(f'Ingrese el nuevo valor para {key} :')
+                activosdata['Activos'][Id][key].update({activosdata['Activos'][Id][key]:activosdata['Activos'][Id]})
+                cf.UpdateFile('inventario.json',activosdata)
         
     
         

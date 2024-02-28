@@ -4,6 +4,7 @@ import modulos.menus as mn
 import modulos.corefile as cf
 import sys
 import funciones.funcionesActivos as fa
+import funciones.funcionespersonas as fp
 dataa = {
     'Activos':{},
     'Personas':{},
@@ -11,7 +12,7 @@ dataa = {
     'Asignacion':{},
 }
 def main():
-    cf.checkFile("dataa.json",dataa)
+    cf.checkFile("data.json",dataa)
 if __name__ == "__main__":
     main()
     Runpro = True
@@ -30,7 +31,13 @@ if __name__ == "__main__":
                             rta1 = input('Desea Regresar agregar otro activo Si(S/s) Enter(No) :')
                             isrun11 = bool(rta1)
                 if op1 == "2":
-                    pass
+                    isrun112 = True
+                    while isrun112:
+                        fa.updateActivos(dataa)
+                        rta12 = 'x'
+                        while (rta12 not in ['S','s','']):
+                            rta12 = input('Desea actualizar otro activo Si(S/s) Enter(No) :')
+                            isrun112 = bool(rta12)
                 if op1 == "3":
                     pass
                 if op1 == "4":
@@ -45,7 +52,13 @@ if __name__ == "__main__":
             while Run2:    
                 op2 = mn.menuPer()
                 if op2 == "1":
-                    pass
+                    isrun22 = True
+                    while isrun22:
+                        fp.addpersonas(dataa)
+                        rta1 = 'x'
+                        while (rta1 not in ['S','s','']):
+                            rta1 = input('Desea Regresar agregar otro activo Si(S/s) Enter(No) :')
+                            isrun22 = bool(rta1)
                 if op2 == "2":
                     pass
                 if op2 == "3":

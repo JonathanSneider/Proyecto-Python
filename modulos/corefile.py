@@ -13,18 +13,7 @@ def readDataFile(archivo):
 def createData(archivo,data):
     with open(BASE+archivo,"w+") as rwf:
         json.dump(data,rwf,indent=4)
-        
-def updateActivos(dataa,srcData):
-    if (len(dataa) <=0):
-        print('No se encuentra registrada informacion la cual actualizar')
-        os.system('pause')
-    else:
-        activoup = input('Ingrese el activo el cual desea actualizar : ') 
-        
-        srcData['proveedores'].update({dataa['nit']:dataa})
-        UpdateFile('inventario.json',srcData)
-    os.system('pause')
-    
+          
 def UpdateFile(archivo,data):
     with open(BASE+ archivo,'w') as fw:
         json.dump(data,fw,indent=4)
