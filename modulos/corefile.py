@@ -23,10 +23,38 @@ def delData(data):
     data['proveedores'].pop(delVal)
     UpdateFile('inventario.json',data)
     
-def search(data):
-    valor = input("Ingrese el Nit del proveedor a buscar -> ")
-    result= data['proveedores'].get(valor)
-    nit,nombrePro,tipo,direccion = result.values()
-    ciudad,ubicacion,longitud,latitud = direccion.values()
-    print(f'Nit {nit}:')
-    os.system('pause')
+
+def Search(inventario: dict, opcion: str): 
+    if inventario[opcion]:
+        isValueTrue = True
+        while isValueTrue:
+            codCampus = str(input(')_'))
+            for idx, (key, value) in enumerate(inventario[opcion].items()): #Itera sobre el diccionario seleccionado y idx imprime un mensaje de error
+                if opcion == 'activos':
+                    if value['CodCampus'] == codCampus:
+                        return key
+                    elif len(inventario[opcion])-1 == idx:
+                        print('nombre no encontrado, ingreselo de nuevo')
+                        os.system('pause')
+                elif opcion == 'Peronas':
+                    if value['id'] == codCampus:
+                        return key
+                    elif len(inventario[opcion])-1 == idx:
+                        print('Id no encontrado, ingreselo de nuevo')
+                        os.system('pause')
+                elif opcion == 'Zonas':
+                    if value['NroZona'] == codCampus:
+                        return key
+                    elif len(inventario[opcion])-1 == idx:
+                        print('Nro de Zona no encontrado, ingreselo de nuevo')
+                        os.system('pause')
+                elif opcion == 'Asignacion':
+                    if value['NroAsig'] == codCampus:
+                        return key
+                    elif len(inventario[opcion])-1 == idx:
+                        print('Nro de Asignacion no encontrado, ingreselo de nuevo')
+                        os.system('pause')
+    else:
+        print('no has ingresado ningun activo')
+        os.system('pause')
+        return

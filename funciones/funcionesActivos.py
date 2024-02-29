@@ -79,20 +79,36 @@ def Addactivos(activosdata: dict):
     
 def updateActivos(activosdata:dict):
     os.system('cls')
-    Id = input('Ingrese el codigo del activo : ')
-    for key in activosdata['Activos'].keys():
-        if Id not in activosdata['Activos']:
-            print('El codigo no se encuentra registrado')
-            os.system('pause')
-            break
+    print('Ingrese el Codigo de campus del activo que desea actualizar')
+    cf.Search('data.json',activosdata)
+    opciones = ['1','2','3','4','5','6','7','8','9']
+    print('1. Codigo de Transaccion\n2. Numero de Formulario\n3. Marca\n4. Categoria\n5. Tipo\n6. Valor unitario\n7. Proveedor\n8. Numero de serial\n9. Empresa responsable')
+    op = input('Seleccione una opciones : ')
+    if op not in opciones:
+        print('Ingresaste una opciones no valida')
+        os.system('pause')
+        return
     else:
-        for key,value in activosdata['Activos'][Id].items():
-            if(bool(input(f'Desea modificar el {key} s(si) o Enter No'))):
-                os.system('cls')
-                activosdata['Activos'][key] = input(f'Ingrese el nuevo valor para {key} :')
-                activosdata.get('Activos').get(Id).Update({activosdata['Activos'][Id][key]:activosdata['Activos'][Id]})
-                cf.UpdateFile('inventario.json',activosdata)
-        
+        pass
+    if op == '1':
+        pass
+    if op == '2':
+        pass
+    if op == '3':
+        pass
+    if op == '4':
+        pass
+    if op == '5':
+        pass
+    if op == '6':
+        pass
+    if op == '7':
+        pass
+    if op == '8':
+        pass
+    if op == '9':
+        pass
+    
     
         
     
