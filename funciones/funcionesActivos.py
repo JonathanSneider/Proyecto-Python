@@ -76,11 +76,12 @@ def Addactivos(activosdata: dict):
     }
     activosdata['Activos'].update({CodCampus:Activo})
     cf.UpdateFile('data.json',activosdata)
-#incompleto
+
 def updateActivos(activosdata:dict):
     os.system('cls')
     print('Ingrese el Codigo de campus del activo que desea actualizar')
-    cf.Search('data.json',activosdata)
+    codCampus = cf.Search(activosdata, 'Activos')
+    atajo = activosdata['Activos'][codCampus]
     opciones = ['1','2','3','4','5','6','7','8','9']
     print('1. Codigo de Transaccion\n2. Numero de Formulario\n3. Marca\n4. Categoria\n5. Tipo\n6. Valor unitario\n7. Proveedor\n8. Numero de serial\n9. Empresa responsable')
     op = input('Seleccione una opciones : ')
@@ -91,28 +92,52 @@ def updateActivos(activosdata:dict):
     else:
         pass
     if op == '1':
-        pass
+        valorN = input('Ingrese el Nuevo codigo de transaccion : ')
+        atajo['CodTransaccion']= valorN
+        cf.UpdateFile('data.json',activosdata)
     if op == '2':
-        pass
+        valorN = input('Ingrese el Nuevo Numero de formulario : ')
+        atajo['NroFormulario']=valorN
+        cf.UpdateFile('data.json',activosdata)
     if op == '3':
-        pass
+        valorN = input('Ingrese la nueva marca : ')
+        atajo['Marca']=valorN
+        cf.UpdateFile('data.json',activosdata)
     if op == '4':
-        pass
+        valorN = input('Ingrese la nueva categoria : ')
+        atajo['Categoria']=valorN
+        cf.UpdateFile('data.json',activosdata)
     if op == '5':
-        pass
+        valorN = input('Ingrese El nuevo tipo : ')
+        atajo['Tipo']=valorN
+        cf.UpdateFile('data.json',activosdata)
     if op == '6':
-        pass
+        isrun6 = True
+        while isrun6:
+            try:
+                valorN = int(input('Ingrese el nuevo valor unitario : '))
+            except ValueError:
+                print('Ingresaste un valor invalido')
+                os.system('pause')
+                continue
+            else:
+                isrun6 = False
+        atajo['VlrUnitario']=valorN
+        cf.UpdateFile('data.json',activosdata)
     if op == '7':
-        pass
+        valorN = input('Ingrese el nuevo proveedor : ')
+        atajo['Proveedor']=valorN
+        cf.UpdateFile('data.json',activosdata)
     if op == '8':
-        pass
+        valorN = input('Ingrese el nuevo numero serial : ')
+        atajo['NroSerial']=valorN
+        cf.UpdateFile('data.json',activosdata)
     if op == '9':
-        pass
-#Incompleto
-def eliminaractivos(activosdata:dict):
-    os.system('cls')
-    print('Ingrese el Codigo de campus del activo que desea eliminar')
-    cf.Search('data.json',activosdata)
+        valorN = input('Ingrese la nueva empresa responsable : ')
+        atajo['Empresaresponsable']=valorN
+        cf.UpdateFile('data.json',activosdata)
+
+
     
     
         

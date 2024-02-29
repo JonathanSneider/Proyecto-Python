@@ -45,9 +45,9 @@ def Search(inventario: dict, opcion: str):
     if inventario[opcion]:
         isValueTrue = True
         while isValueTrue:
-            codCampus = str(input(')_'))
+            codCampus = str(input(')_ : '))
             for idx, (key, value) in enumerate(inventario[opcion].items()): #Itera sobre el diccionario seleccionado y idx imprime un mensaje de error
-                if opcion == 'activos':
+                if opcion == 'Activos':
                     if value['CodCampus'] == codCampus:
                         return key
                     elif len(inventario[opcion])-1 == idx:

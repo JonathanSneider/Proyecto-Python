@@ -20,13 +20,13 @@
             }
         },
         "adad": {
-            "CodTransaccion": "123",
-            "NroFormulario": "adad",
+            "CodTransaccion": "321",
+            "NroFormulario": "412412",
             "CodCampus": "adad",
             "Marca": "LG",
             "Categoria": "JUEGO",
             "Tipo": "",
-            "VlrUnitario": 1321.0,
+            "VlrUnitario": 11111,
             "Proveedor": "313a",
             "NroSerial": "adad",
             "Empresaresponsable": "adas",
