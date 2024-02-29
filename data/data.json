@@ -1,16 +1,35 @@
 {
     "Activos": {
-        "asdad": {
-            "CodTransaccion": "12321",
+        "asdsad": {
+            "CodTransaccion": "31231",
             "NroFormulario": "adsad",
-            "CodCampus": "asdad",
+            "CodCampus": "asdsad",
             "Marca": "LG",
             "Categoria": "JUEGO",
             "Tipo": "",
-            "VlrUnitario": 123123.0,
-            "Proveedor": "dasda",
-            "NroSerial": "dada",
-            "Empresaresponsable": "dada",
+            "VlrUnitario": 23123.0,
+            "Proveedor": "dada",
+            "NroSerial": "adad",
+            "Empresaresponsable": "adasd",
+            "Estado": "No Asignado",
+            "HistorialActivo": {
+                "Nrold": "",
+                "Fecha": "",
+                "tipoMov": "",
+                "idRespMov": ""
+            }
+        },
+        "adad": {
+            "CodTransaccion": "123",
+            "NroFormulario": "adad",
+            "CodCampus": "adad",
+            "Marca": "LG",
+            "Categoria": "JUEGO",
+            "Tipo": "",
+            "VlrUnitario": 1321.0,
+            "Proveedor": "313a",
+            "NroSerial": "adad",
+            "Empresaresponsable": "adas",
             "Estado": "No Asignado",
             "HistorialActivo": {
                 "Nrold": "",
@@ -20,7 +39,35 @@
             }
         }
     },
-    "Personas": {},
+    "Personas": {
+        "12313": {
+            "id": 12313,
+            "nombre": "adasd",
+            "Email": "adadsa",
+            "TelefonoMovil": 231,
+            "TelefonoCasa": 312313,
+            "TelefonoPersonal": 13123,
+            "telefonoficina": 13213
+        },
+        "321": {
+            "id": 321,
+            "nombre": "ad",
+            "Email": "adad",
+            "TelefonoMovil": 32131,
+            "TelefonoCasa": 321313,
+            "TelefonoPersonal": 131231,
+            "telefonoficina": 231231
+        },
+        "13213321": {
+            "id": 13213321,
+            "nombre": "dad",
+            "Email": "adad",
+            "TelefonoMovil": 2313,
+            "TelefonoCasa": 131231,
+            "TelefonoPersonal": 131321,
+            "telefonoficina": 12313
+        }
+    },
     "Zonas": {},
     "Asignacion": {}
 }

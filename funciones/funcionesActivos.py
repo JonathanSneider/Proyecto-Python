@@ -75,7 +75,7 @@ def Addactivos(activosdata: dict):
         }
     }
     activosdata['Activos'].update({CodCampus:Activo})
-    cf.createData('data.json',activosdata)
+    cf.UpdateFile('data.json',activosdata)
     
 def updateActivos(activosdata:dict):
     os.system('cls')
@@ -86,11 +86,11 @@ def updateActivos(activosdata:dict):
             os.system('pause')
             break
     else:
-        for key,value in activosdata['Activos'][Id].keys():
+        for key,value in activosdata['Activos'][Id].items():
             if(bool(input(f'Desea modificar el {key} s(si) o Enter No'))):
                 os.system('cls')
                 activosdata['Activos'][key] = input(f'Ingrese el nuevo valor para {key} :')
-                activosdata['Activos'][Id][key].update({activosdata['Activos'][Id][key]:activosdata['Activos'][Id]})
+                activosdata.get('Activos').get(Id).Update({activosdata['Activos'][Id][key]:activosdata['Activos'][Id]})
                 cf.UpdateFile('inventario.json',activosdata)
         
     

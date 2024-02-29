@@ -67,7 +67,7 @@ def addpersonas(personasdata):
     }
     
     personasdata['Personas'].update({Id:personas})
-    cf.createData('data.json',personasdata)
+    cf.UpdateFile('data.json',personasdata)
     
     
     

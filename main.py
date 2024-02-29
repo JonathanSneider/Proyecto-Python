@@ -11,10 +11,9 @@ dataa = {
     'Zonas':{},
     'Asignacion':{},
 }
-def main():
-    cf.checkFile("data.json",dataa)
+
+inventario = cf.checkFile("data.json",dataa)
 if __name__ == "__main__":
-    main()
     Runpro = True
     while Runpro:
         op = mn.menuPrincipal()
@@ -25,7 +24,7 @@ if __name__ == "__main__":
                 if op1 == "1":
                     isrun11 = True
                     while isrun11:
-                        fa.Addactivos(dataa)
+                        fa.Addactivos(inventario)
                         rta1 = 'x'
                         while (rta1 not in ['S','s','']):
                             rta1 = input('Desea Regresar agregar otro activo Si(S/s) Enter(No) :')
@@ -33,7 +32,7 @@ if __name__ == "__main__":
                 if op1 == "2":
                     isrun112 = True
                     while isrun112:
-                        fa.updateActivos(dataa)
+                        fa.updateActivos(inventario)
                         rta12 = 'x'
                         while (rta12 not in ['S','s','']):
                             rta12 = input('Desea actualizar otro activo Si(S/s) Enter(No) :')
@@ -54,7 +53,7 @@ if __name__ == "__main__":
                 if op2 == "1":
                     isrun22 = True
                     while isrun22:
-                        fp.addpersonas(dataa)
+                        fp.addpersonas(inventario)
                         rta1 = 'x'
                         while (rta1 not in ['S','s','']):
                             rta1 = input('Desea Regresar agregar otro activo Si(S/s) Enter(No) :')
