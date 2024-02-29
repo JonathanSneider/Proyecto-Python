@@ -76,7 +76,7 @@ def Addactivos(activosdata: dict):
     }
     activosdata['Activos'].update({CodCampus:Activo})
     cf.UpdateFile('data.json',activosdata)
-    
+#incompleto
 def updateActivos(activosdata:dict):
     os.system('cls')
     print('Ingrese el Codigo de campus del activo que desea actualizar')
@@ -108,6 +108,11 @@ def updateActivos(activosdata:dict):
         pass
     if op == '9':
         pass
+#Incompleto
+def eliminaractivos(activosdata:dict):
+    os.system('cls')
+    print('Ingrese el Codigo de campus del activo que desea eliminar')
+    cf.Search('data.json',activosdata)
     
     
         

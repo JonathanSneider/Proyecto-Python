@@ -18,10 +18,27 @@ def UpdateFile(archivo,data):
         fw.truncate()
         
         
-def delData(data):
-    delVal = input("Ingrese el Nit del proveedor que desea borrar -> ")
-    data['proveedores'].pop(delVal)
-    UpdateFile('inventario.json',data)
+def delOp(dataInventario,opcion):
+    if dataInventario[opcion]:
+        os.system('cls')
+        if opcion == 'activo':
+            delVal = input("Ingrese el Codigo de campus del Activo que quiere borrar <-> ")
+        elif opcion == 'personal':
+            delVal = input("Ingrese el Nro de Identificacion de la Persona que quiere borrar <-> ")
+        elif opcion == 'zonas':
+            delVal = input("Ingrese el Nro de Identificacion de la Zona que quiere borrar <-> ")
+
+        if delVal not in dataInventario[opcion].items():
+            print('El codigo ingresado no esta registrado...')
+            os.system('pause')
+            delOp()
+        dataInventario[opcion].pop(delVal)
+        UpdateFile('inventario.json',dataInventario)
+        print('Ha sido eliminado correctamente')
+        os.system('pause')
+    else:
+        print(f'No has ingresado algun {opcion}...')
+        os.system('pause')
     
 
 def Search(inventario: dict, opcion: str): 
