@@ -15,8 +15,8 @@ dataa = {
 }
 
 inventario = cf.checkFile("data.json",dataa)
-fcv.añadiendoactivos(inventario)
-cf.UpdateFile('data.json', inventario)
+#fcv.añadiendoactivos(inventario)
+#cf.UpdateFile('data.json', inventario)
 
 if __name__ == "__main__":
    

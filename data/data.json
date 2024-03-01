@@ -7417,6 +7417,25 @@
             "empResponsable": "Campuslands",
             "Estado": "Asignado",
             "historialActivo": {}
+        },
+        "231aa": {
+            "CodTransaccion": "",
+            "NroFormulario": "12313",
+            "CodCampus": "231aa",
+            "Marca": "COMPUMAX",
+            "Categoria": "JUEGO",
+            "Tipo": "",
+            "VlrUnitario": 12312.0,
+            "Proveedor": "adad",
+            "NroSerial": "adad",
+            "Empresaresponsable": "gasga",
+            "Estado": "No Asignado",
+            "HistorialActivo": {
+                "Nrold": "",
+                "Fecha": "",
+                "tipoMov": "",
+                "idRespMov": ""
+            }
         }
     },
     "Personas": {
@@ -7453,6 +7472,16 @@
             "NroZona": "01",
             "NombreZona": "Rrr",
             "TotalCapacidad": 124
+        },
+        "02": {
+            "NroZona": "02",
+            "NombreZona": "adad",
+            "TotalCapacidad": 13
+        },
+        "03": {
+            "NroZona": "03",
+            "NombreZona": "hh",
+            "TotalCapacidad": 13
         }
     },
     "Asignacion": {}
