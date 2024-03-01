@@ -44,7 +44,13 @@ if __name__ == "__main__":
                             rta12 = input('Desea actualizar otro activo Si(S/s) Enter(No) :')
                             isrun112 = bool(rta12)
                 if op1 == "3":
-                    pass
+                    isruna3 = True
+                    while isruna3:
+                        fa.delActivos(inventario)
+                        rta33 = 'x'
+                        while (rta33 not in ['S','s','']):
+                            rta33 = input('Desea actualizar otro activo Si(S/s) Enter(No) :')
+                            isruna3 = bool(rta33)
                 if op1 == "4":
                     pass
                 if op1 == "5":

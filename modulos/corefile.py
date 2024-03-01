@@ -21,20 +21,19 @@ def UpdateFile(archivo,data):
 def delOp(dataInventario,opcion):
     if dataInventario[opcion]:
         os.system('cls')
-        if opcion == 'activo':
-            delVal = input("Ingrese el Codigo de campus del Activo que quiere borrar <-> ")
-        elif opcion == 'personal':
-            delVal = input("Ingrese el Nro de Identificacion de la Persona que quiere borrar <-> ")
-        elif opcion == 'zonas':
-            delVal = input("Ingrese el Nro de Identificacion de la Zona que quiere borrar <-> ")
+        if opcion == 'Activos':
+            delVal = input("Ingrese el Codigo de campus del Activo que quiere eliminar : ")
+        elif opcion == 'Personas':
+            delVal = input("Ingrese el Nro de Identificacion de la Persona que quiere eliminar : ")
+        elif opcion == 'Zonas':
+            delVal = input("Ingrese el Nro de Identificacion de la Zona que quiere eliminar : ")
 
-        if delVal not in dataInventario[opcion].items():
-            print('El codigo ingresado no esta registrado...')
+        if delVal not in dataInventario[opcion].keys():
+            print('El codigo ingresado no esta registrado')
             os.system('pause')
-            delOp()
+            delOp(dataInventario,opcion)
         dataInventario[opcion].pop(delVal)
-        UpdateFile('inventario.json',dataInventario)
-        print('Ha sido eliminado correctamente')
+        UpdateFile('data.json',dataInventario)
         os.system('pause')
     else:
         print(f'No has ingresado algun {opcion}...')

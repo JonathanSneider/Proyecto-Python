@@ -19,25 +19,6 @@
                 "idRespMov": ""
             }
         },
-        "adad": {
-            "CodTransaccion": "321",
-            "NroFormulario": "412412",
-            "CodCampus": "adad",
-            "Marca": "LG",
-            "Categoria": "JUEGO",
-            "Tipo": "",
-            "VlrUnitario": 11111,
-            "Proveedor": "313a",
-            "NroSerial": "adad",
-            "Empresaresponsable": "adas",
-            "Estado": "No Asignado",
-            "HistorialActivo": {
-                "Nrold": "",
-                "Fecha": "",
-                "tipoMov": "",
-                "idRespMov": ""
-            }
-        },
         "CPU001": {
             "codTransaccion": "327",
             "nroFormulario": "966217823",
@@ -7417,25 +7398,6 @@
             "empResponsable": "Campuslands",
             "Estado": "Asignado",
             "historialActivo": {}
-        },
-        "231aa": {
-            "CodTransaccion": "",
-            "NroFormulario": "12313",
-            "CodCampus": "231aa",
-            "Marca": "COMPUMAX",
-            "Categoria": "JUEGO",
-            "Tipo": "",
-            "VlrUnitario": 12312.0,
-            "Proveedor": "adad",
-            "NroSerial": "adad",
-            "Empresaresponsable": "gasga",
-            "Estado": "No Asignado",
-            "HistorialActivo": {
-                "Nrold": "",
-                "Fecha": "",
-                "tipoMov": "",
-                "idRespMov": ""
-            }
         }
     },
     "Personas": {

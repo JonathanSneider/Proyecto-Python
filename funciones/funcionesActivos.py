@@ -137,6 +137,10 @@ def updateActivos(activosdata:dict):
         atajo['Empresaresponsable']=valorN
         cf.UpdateFile('data.json',activosdata)
 
+def delActivos(inventario : dict):
+    print('Ingrese el Codigo de campus del activo que desea eliminar')
+    cf.delOp(inventario,'Activos')
+
 
     
     
