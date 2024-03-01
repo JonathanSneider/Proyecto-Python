@@ -34,6 +34,12 @@ def Addactivos(activosdata: dict):
     CodTransaccion = input('Ingrese el codigo de transaccion : ')
     NroFormulario = input('ingrese el numero de formulario : ')
     CodCampus = input('Ingrese el Codigo de campus : ')
+    if CodCampus in activosdata['Activos']:
+        print('El codigo de campus que intentas registrar ya se encuentra registrado')
+        os.system('pause')
+        return
+    else:
+        pass
     marcaa = VRF(marca,"la","marca")
     categoriaa = VRF(categoria,"la","categoria")
     if categoriaa == "JUEGO":
@@ -93,7 +99,7 @@ def updateActivos(activosdata:dict):
     print('1. Codigo de Transaccion\n2. Numero de Formulario\n3. Marca\n4. Categoria\n5. Tipo\n6. Valor unitario\n7. Proveedor\n8. Numero de serial\n9. Empresa responsable')
     op = input('Seleccione una opciones : ')
     if op not in opciones:
-        print('Ingresaste una opciones no valida')
+        print('Ingresaste una opcion no valida')
         os.system('pause')
         return
     else:

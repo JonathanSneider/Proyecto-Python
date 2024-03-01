@@ -10,6 +10,13 @@ def addpersonas(personasdata):
         addpersonas(personasdata)
     else:
         pass
+    idd = str(Id)
+    if idd in personasdata['Personas']:
+        print('El id que ingresaste ya se encuentra registrado')
+        os.system('pause')
+        return
+    else:
+        pass
     nombre = input('Ingrese el nombre : ')
     Email = input('Ingrese el email : ')
     isrunmovil = True
@@ -21,6 +28,12 @@ def addpersonas(personasdata):
             os.system('pause')
             continue
         else:
+            if (Telefonomovil < 0):
+                print('Ingresa un numero valido')
+                os.system('pause')
+                continue
+            else:
+                pass
             isrunmovil = False
     isruncasa = True
     while isruncasa:
@@ -31,6 +44,12 @@ def addpersonas(personasdata):
             os.system('pause')
             continue
         else:
+            if (telefonoCasa < 0):
+                print('Ingresa un numero valido')
+                os.system('pause')
+                continue
+            else:
+                pass
             isruncasa = False
             
     isrunpersonal = True
@@ -42,6 +61,12 @@ def addpersonas(personasdata):
             os.system('pause')
             continue
         else:
+            if (telefonopersonal < 0):
+                print('Ingresa un numero valido')
+                os.system('pause')
+                continue
+            else:
+                pass
             isrunpersonal = False
     isrunoficina = True
     while isrunoficina:
@@ -52,10 +77,16 @@ def addpersonas(personasdata):
             os.system('pause')
             continue
         else:
+            if (telefonooficina < 0):
+                print('Ingresa un numero valido')
+                os.system('pause')
+                continue
+            else:
+                pass
             isrunoficina = False
     personas = {
         
-        "id":str(id),
+        "id":idd,
         "nombre":nombre,
         "Email":Email,
         "TelefonoMovil":Telefonomovil,
@@ -65,12 +96,12 @@ def addpersonas(personasdata):
     
     }
     
-    personasdata['Personas'].update({Id:personas})
+    personasdata['Personas'].update({idd:personas})
     cf.UpdateFile('data.json',personasdata)
     
 def ActualizarPersonas(inventario:dict):
     os.system('cls')
-    print('Ingrese el id de la persona que desea eliminar')
+    print('Ingrese el id de la persona que desea actualizar')
     idPer = cf.Search(inventario, 'Personas')
     atajo = inventario['Personas'][idPer]
     opciones = ['1','2','3','4','5','6']    
@@ -162,6 +193,9 @@ def ActualizarPersonas(inventario:dict):
                 isrun6 = False
         atajo['telefonoficina']=valorN
         cf.UpdateFile('data.json',inventario)
+        
+def eliminarpersonas(inventario):
+    cf.delOp(inventario, 'Personas')
     
         
     

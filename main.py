@@ -68,7 +68,7 @@ if __name__ == "__main__":
                         fp.addpersonas(inventario)
                         rtap111 = 'x'
                         while (rtap111 not in ['S','s','']):
-                            rtap111 = input('Desea Regresar agregar otro activo Si(S/s) Enter(No) :')
+                            rtap111 = input('Desea Regresar agregar otra persona Si(S/s) Enter(No) :')
                             isrun22 = bool(rtap111)
                 if op2 == "2":
                     isrunP12 = True
@@ -76,10 +76,16 @@ if __name__ == "__main__":
                         fp.ActualizarPersonas(inventario)
                         rtap12 = 'x'
                         while (rtap12 not in ['S','s','']):
-                            rtap12 = input('Desea Regresar agregar otro activo Si(S/s) Enter(No) :')
+                            rtap12 = input('Desea Regresar actualizar la informacion de otra persona Si(S/s) Enter(No) :')
                             isrunP12 = bool(rtap12)
                 if op2 == "3":
-                    pass
+                    isrunP33 = True
+                    while isrunP33:
+                        fp.eliminarpersonas(inventario)
+                        rtap33 = 'x'
+                        while (rtap33 not in ['S','s','']):
+                            rtap33 = input('Desea eliminar otra persona Si(S/s) Enter(No) :')
+                            isrunP33 = bool(rtap33)
                 if op2 == "4":
                     pass
                 if op2 == "5":
@@ -100,9 +106,21 @@ if __name__ == "__main__":
                             rtaz1 = input('Desea Regresar agregar otra zona Si(S/s) Enter(No) :')
                             isrunz1 = bool(rtaz1)
                 if op3 == "2":
-                    pass
+                    isrunZ22 = True
+                    while isrunZ22:
+                        fz.actualizarzonas(inventario)
+                        rtaz2 = 'x'
+                        while (rtaz2 not in ['S','s','']):
+                            rtaz2 = input('Desea Regresar agregar otra zona Si(S/s) Enter(No) :')
+                            isrunZ22 = bool(rtaz2)
                 if op3 == "3":
-                    pass
+                    isrunz33 = True
+                    while isrunz33:
+                        fz.eliminarzona(inventario)
+                        rtaz3 = 'x'
+                        while (rtaz3 not in ['S','s','']):
+                            rtaz3 = input('Desea Regresar agregar otra zona Si(S/s) Enter(No) :')
+                            isrunz33 = bool(rtaz3)
                 if op3 == "4":
                     pass
                 if op3 == "5":
