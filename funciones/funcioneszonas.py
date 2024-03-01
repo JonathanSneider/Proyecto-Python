@@ -1,9 +1,9 @@
 import os
-import modulos.corefile as cf
+import modulos.corefile as ccf
 
 def agregarzonas(inventario:dict):
     os.system('cls')
-    NroZona = input('Ingrese el numero de la zona : ')
+    NroZona = str(len(inventario['Zonas'])+1).zfill(2)
     NombreZona = input('Ingrese el nombre de la zona : ')
     try:
         totalcapacidad = int(input('Ingrese la capacidad total : '))
@@ -18,4 +18,5 @@ def agregarzonas(inventario:dict):
         "NombreZona":NombreZona,
         "TotalCapacidad":totalcapacidad
     }
-    inventario['Zonas'].update({})
+    inventario['Zonas'].update({NroZona:zonaa})
+    ccf.UpdateFile('data.json',inventario)

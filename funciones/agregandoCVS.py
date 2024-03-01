@@ -1,8 +1,8 @@
 from csv import reader
 
-def AddActivoFromCampus(inventario: dict):
+def añadiendoactivos(inventario: dict):
     data = []
-    with open('externo/activos.csv', 'r') as activos:
+    with open('funciones/Activosss.csv', 'r') as activos:
         lector = reader(activos, delimiter=';')
         for row in lector:
             elementos = row[0].split(',')
@@ -24,4 +24,4 @@ def AddActivoFromCampus(inventario: dict):
             'Estado': item[11],
             'historialActivo': {}
             }
-            inventario['activos'].update({activoCampus['codCampus']: activoCampus})
+            inventario['Activos'].update({activoCampus['codCampus']: activoCampus})

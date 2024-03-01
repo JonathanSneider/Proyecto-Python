@@ -5,6 +5,8 @@ import modulos.corefile as cf
 import sys
 import funciones.funcionesActivos as fa
 import funciones.funcionespersonas as fp
+import funciones.agregandoCVS as fcv
+import funciones.funcioneszonas as fz
 dataa = {
     'Activos':{},
     'Personas':{},
@@ -13,7 +15,11 @@ dataa = {
 }
 
 inventario = cf.checkFile("data.json",dataa)
+fcv.añadiendoactivos(inventario)
+cf.UpdateFile('data.json', inventario)
+
 if __name__ == "__main__":
+   
     Runpro = True
     while Runpro:
         op = mn.menuPrincipal()
@@ -74,7 +80,13 @@ if __name__ == "__main__":
             while Run3:  
                 op3 = mn.menuZon()
                 if op3 == "1":
-                    pass
+                    isrunz1 = True
+                    while isrunz1:
+                        fz.agregarzonas(inventario)
+                        rtaz1 = 'x'
+                        while (rtaz1 not in ['S','s','']):
+                            rtaz1 = input('Desea Regresar agregar otra zona Si(S/s) Enter(No) :')
+                            isrunz1 = bool(rtaz1)
                 if op3 == "2":
                     pass
                 if op3 == "3":
