@@ -66,12 +66,18 @@ if __name__ == "__main__":
                     isrun22 = True
                     while isrun22:
                         fp.addpersonas(inventario)
-                        rta1 = 'x'
-                        while (rta1 not in ['S','s','']):
-                            rta1 = input('Desea Regresar agregar otro activo Si(S/s) Enter(No) :')
-                            isrun22 = bool(rta1)
+                        rtap111 = 'x'
+                        while (rtap111 not in ['S','s','']):
+                            rtap111 = input('Desea Regresar agregar otro activo Si(S/s) Enter(No) :')
+                            isrun22 = bool(rtap111)
                 if op2 == "2":
-                    pass
+                    isrunP12 = True
+                    while isrunP12:
+                        fp.ActualizarPersonas(inventario)
+                        rtap12 = 'x'
+                        while (rtap12 not in ['S','s','']):
+                            rtap12 = input('Desea Regresar agregar otro activo Si(S/s) Enter(No) :')
+                            isrunP12 = bool(rtap12)
                 if op2 == "3":
                     pass
                 if op2 == "4":

@@ -7,7 +7,7 @@
             "Marca": "LG",
             "Categoria": "JUEGO",
             "Tipo": "",
-            "VlrUnitario": 23123.0,
+            "VlrUnitario": -9999,
             "Proveedor": "dada",
             "NroSerial": "adad",
             "Empresaresponsable": "adasd",
@@ -7402,25 +7402,25 @@
     },
     "Personas": {
         "12313": {
-            "id": 12313,
-            "nombre": "adasd",
+            "id": "12313",
+            "nombre": 14141241,
             "Email": "adadsa",
-            "TelefonoMovil": 231,
+            "TelefonoMovil": 2131321,
             "TelefonoCasa": 312313,
             "TelefonoPersonal": 13123,
             "telefonoficina": 13213
         },
         "321": {
-            "id": 321,
+            "id": "321",
             "nombre": "ad",
             "Email": "adad",
             "TelefonoMovil": 32131,
             "TelefonoCasa": 321313,
-            "TelefonoPersonal": 131231,
+            "TelefonoPersonal": 12312311231,
             "telefonoficina": 231231
         },
         "13213321": {
-            "id": 13213321,
+            "id": "13213321",
             "nombre": "dad",
             "Email": "adad",
             "TelefonoMovil": 2313,

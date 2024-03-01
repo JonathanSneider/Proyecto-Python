@@ -48,7 +48,14 @@ def Addactivos(activosdata: dict):
             print('Ingrese un numero valido')
             os.system('pause')
         else:
+            if (VlrUnitario < 0):
+                print('Ingresa un numero valido')
+                os.system('pause')
+                continue
+            else:
+                pass
             isrunVlr = False
+
     Proveedor = input('Ingrese el proveedor del activo : ')
     NroSerial = input('Ingrese el codigo serial : ')
     Empresaresponsable = input('Ingrese la Empresa responsable del activo : ')
@@ -121,7 +128,14 @@ def updateActivos(activosdata:dict):
                 os.system('pause')
                 continue
             else:
+                if (valorN < 0):
+                    print('Ingresa un numero valido')
+                    os.system('pause')
+                    continue
+                else:
+                    pass
                 isrun6 = False
+            
         atajo['VlrUnitario']=valorN
         cf.UpdateFile('data.json',activosdata)
     if op == '7':
