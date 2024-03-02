@@ -42,10 +42,7 @@ def Addactivos(activosdata: dict):
         pass
     marcaa = VRF(marca,"la","marca")
     categoriaa = VRF(categoria,"la","categoria")
-    if categoriaa == "JUEGO":
-        tipoo = ""
-    else:
-        tipoo = VRF(tipo,"el","tipo")
+    tipoo = VRF(tipo,"el","tipo")
     isrunVlr = True
     while isrunVlr:
         try:
@@ -70,7 +67,7 @@ def Addactivos(activosdata: dict):
         
         "CodTransaccion":CodTransaccion,
         "NroFormulario":NroFormulario,
-        "CodCampus":CodCampus,
+        "codCampus":CodCampus,
         "Marca":marcaa,
         "Categoria":categoriaa,
         "Tipo":tipoo,
@@ -79,13 +76,7 @@ def Addactivos(activosdata: dict):
         "NroSerial":NroSerial,
         "Empresaresponsable":Empresaresponsable,
         "Estado":Estado,
-        "HistorialActivo":{
-            'Nrold':"",
-            'Fecha':"",
-            'tipoMov':"",
-            'idRespMov':""
-            
-        }
+        "HistorialActivo":{}
     }
     activosdata['Activos'].update({CodCampus:Activo})
     cf.UpdateFile('data.json',activosdata)
@@ -113,15 +104,15 @@ def updateActivos(activosdata:dict):
         atajo['NroFormulario']=valorN
         cf.UpdateFile('data.json',activosdata)
     if op == '3':
-        valorN = input('Ingrese la nueva marca : ')
+        valorN = VRF(marca,"la","marca")
         atajo['Marca']=valorN
         cf.UpdateFile('data.json',activosdata)
     if op == '4':
-        valorN = input('Ingrese la nueva categoria : ')
+        valorN = VRF(categoria,"la","categoria")
         atajo['Categoria']=valorN
         cf.UpdateFile('data.json',activosdata)
     if op == '5':
-        valorN = input('Ingrese El nuevo tipo : ')
+        valorN = VRF(tipo,"el","tipo")
         atajo['Tipo']=valorN
         cf.UpdateFile('data.json',activosdata)
     if op == '6':
@@ -160,6 +151,16 @@ def updateActivos(activosdata:dict):
 def delActivos(inventario : dict):
     print('Ingrese el Codigo de campus del activo que desea eliminar')
     cf.delOp(inventario,'Activos')
+    
+def buscaractivos(inventario:dict):
+    os.system('cls')
+    print('Ingrese el codigo de campus del activo el cual desea buscar')
+    resultado = cf.Search(inventario, 'Activos')
+    diccionario = inventario['Activos'][resultado]
+    lista = [(key,value)for key,value in diccionario.items()]
+    print(tabulate(lista, tablefmt="grid"))
+    os.system('pause')
+    
 
 
     

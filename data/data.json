@@ -3,7 +3,7 @@
         "asdsad": {
             "CodTransaccion": "31231",
             "NroFormulario": "aaaa",
-            "CodCampus": "asdsad",
+            "codCampus": "asdsad",
             "Marca": "LG",
             "Categoria": "JUEGO",
             "Tipo": "",
@@ -12,12 +12,7 @@
             "NroSerial": "adad",
             "Empresaresponsable": "adasd",
             "Estado": "No Asignado",
-            "HistorialActivo": {
-                "Nrold": "",
-                "Fecha": "",
-                "tipoMov": "",
-                "idRespMov": ""
-            }
+            "HistorialActivo": {}
         },
         "CPU001": {
             "codTransaccion": "327",
@@ -7402,21 +7397,30 @@
         "111a": {
             "CodTransaccion": "qweqew",
             "NroFormulario": "qeqweq",
-            "CodCampus": "111a",
-            "Marca": "LG",
+            "codCampus": "111a",
+            "Marca": "HP",
             "Categoria": "JUEGO",
             "Tipo": "",
-            "VlrUnitario": 1231321.0,
+            "VlrUnitario": 888,
             "Proveedor": "dadad",
             "NroSerial": "adads",
             "Empresaresponsable": "adsasd",
             "Estado": "No Asignado",
-            "HistorialActivo": {
-                "Nrold": "",
-                "Fecha": "",
-                "tipoMov": "",
-                "idRespMov": ""
-            }
+            "HistorialActivo": {}
+        },
+        "aaa": {
+            "CodTransaccion": "2313",
+            "NroFormulario": "dadd",
+            "codCampus": "aaa",
+            "Marca": "dasdasd",
+            "Categoria": "asdasd",
+            "Tipo": "MOUSE",
+            "VlrUnitario": 231231.0,
+            "Proveedor": "adada",
+            "NroSerial": "-999",
+            "Empresaresponsable": "adadas",
+            "Estado": "No Asignado",
+            "HistorialActivo": {}
         }
     },
     "Personas": {

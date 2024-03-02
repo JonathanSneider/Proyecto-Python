@@ -49,10 +49,16 @@ if __name__ == "__main__":
                         fa.delActivos(inventario)
                         rta33 = 'x'
                         while (rta33 not in ['S','s','']):
-                            rta33 = input('Desea actualizar otro activo Si(S/s) Enter(No) :')
+                            rta33 = input('Desea eliminar otro activo Si(S/s) Enter(No) :')
                             isruna3 = bool(rta33)
                 if op1 == "4":
-                    pass
+                    isrunA4 = True
+                    while isrunA4:
+                        fa.buscaractivos(inventario)
+                        rtaa4 = 'x'
+                        while (rtaa4 not in ['S','s','']):
+                            rtaa4 = input('Desea buscar otro activo Si(S/s) Enter(No) :')
+                            isrunA4 = bool(rtaa4)
                 if op1 == "5":
                     rta1 = 'x'
                     while (rta1 not in ['N','n','']):

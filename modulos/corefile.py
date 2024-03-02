@@ -44,10 +44,10 @@ def Search(inventario: dict, opcion: str):
             codCampus = str(input(')_ : '))
             for idx, (key, value) in enumerate(inventario[opcion].items()):
                 if opcion == 'Activos':
-                    if value['CodCampus'] == codCampus:
+                    if value['codCampus'] == codCampus:
                         return key
                     elif len(inventario[opcion])-1 == idx:
-                        print('nombre no encontrado, ingreselo de nuevo')
+                        print('id no encontrado, ingreselo de nuevo')
                         os.system('pause')
                 elif opcion == 'Personas':
                     if value['id'] == codCampus:
