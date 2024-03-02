@@ -93,7 +93,13 @@ if __name__ == "__main__":
                             rtap33 = input('Desea eliminar otra persona Si(S/s) Enter(No) :')
                             isrunP33 = bool(rtap33)
                 if op2 == "4":
-                    pass
+                    isrunP44 = True
+                    while isrunP44:
+                        fp.buscarpersonas(inventario)
+                        rtap4 = 'x'
+                        while (rtap4 not in ['S','s','']):
+                            rtap4 = input('Desea eliminar otra persona Si(S/s) Enter(No) :')
+                            isrunP44 = bool(rtap4)
                 if op2 == "5":
                     rta2 = 'x'
                     while (rta2 not in ['N','n','']):
@@ -128,7 +134,13 @@ if __name__ == "__main__":
                             rtaz3 = input('Desea Regresar agregar otra zona Si(S/s) Enter(No) :')
                             isrunz33 = bool(rtaz3)
                 if op3 == "4":
-                    pass
+                    isrunZ4 = True
+                    while isrunZ4:
+                        fz.buscarzona(inventario)
+                        rtaz4 = 'x'
+                        while (rtaz4 not in ['S','s','']):
+                            rtaz4 = input('Desea Regresar agregar otra zona Si(S/s) Enter(No) :')
+                            isrunZ4 = bool(rtaz4)
                 if op3 == "5":
                     rta3 = 'x'
                     while (rta3 not in ['N','n','']):

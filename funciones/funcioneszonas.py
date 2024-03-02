@@ -1,5 +1,6 @@
 import os
 import modulos.corefile as ccf
+from tabulate import tabulate
 
 def agregarzonas(inventario:dict):
     os.system('cls')
@@ -81,3 +82,14 @@ def actualizarzonas(invetario:dict):
         
 def eliminarzona(inventario:dict):
     ccf.delOp(inventario, 'Zonas')
+    
+def buscarzona(inventario:dict):
+    os.system('cls')
+    
+    print('Ingrese el Numero  de la zona que desea buscar')
+    resultado = ccf.Search(inventario, 'Zonas')
+    diccionario = inventario['Zonas'][resultado]
+    lista = [(key, value)for key, value in diccionario.items()]
+    print(tabulate(lista, tablefmt="grid"))
+    os.system('pause')
+    

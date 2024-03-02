@@ -1,5 +1,6 @@
 import os
 import modulos.corefile as cf
+from tabulate import tabulate
 def addpersonas(personasdata):
     os.system('cls')
     try:
@@ -196,6 +197,16 @@ def ActualizarPersonas(inventario:dict):
         
 def eliminarpersonas(inventario):
     cf.delOp(inventario, 'Personas')
+    
+    
+def buscarpersonas(inventario):
+    os.system('cls')
+    print('Ingresa el id de la persona la cual deseas buscar')
+    resultado = cf.Search(inventario, 'Personas')
+    diccionario = inventario['Personas'][resultado]
+    lista = [(key,value) for key,value in diccionario.items()]
+    print(tabulate(lista, tablefmt="grid"))    
+    os.system('pause')
     
         
     
