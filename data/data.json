@@ -11,8 +11,15 @@
             "Proveedor": "dada",
             "NroSerial": "adad",
             "Empresaresponsable": "adasd",
-            "Estado": "No Asignado",
-            "HistorialActivo": {}
+            "Estado": "Asigando",
+            "historialActivo": {
+                "003": {
+                    "NroID": "003",
+                    "Fecha": "12/12/2023",
+                    "tipoMov": "Asiganacion",
+                    "idRespMov": "2222"
+                }
+            }
         },
         "CPU001": {
             "codTransaccion": "327",
@@ -7406,7 +7413,7 @@
             "NroSerial": "adads",
             "Empresaresponsable": "adsasd",
             "Estado": "No Asignado",
-            "HistorialActivo": {}
+            "historialActivo": {}
         },
         "aaa": {
             "CodTransaccion": "2313",
@@ -7420,7 +7427,7 @@
             "NroSerial": "-999",
             "Empresaresponsable": "adadas",
             "Estado": "No Asignado",
-            "HistorialActivo": {}
+            "historialActivo": {}
         }
     },
     "Personas": {
@@ -7459,5 +7466,24 @@
             "TotalCapacidad": 33
         }
     },
-    "Asignacion": {}
+    "Asignacion": {
+        "11": {
+            "NroAsignacion": 11,
+            "FechaAsignacion": "12/12/2024",
+            "TipoAsignacion": "Zona",
+            "AsignadoA": "22",
+            "Activos": [
+                "asdsad"
+            ]
+        },
+        "1112": {
+            "NroAsignacion": "1112",
+            "FechaAsignacion": "12/12/2023",
+            "TipoAsignacion": "Persona",
+            "AsignadoA": "222",
+            "Activos": [
+                "asdsad"
+            ]
+        }
+    }
 }

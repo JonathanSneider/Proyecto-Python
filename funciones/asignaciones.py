@@ -2,6 +2,7 @@ import os
 import modulos.corefile as cf
 
 def añadirasignacion(inventario):
+    activoss = []
     os.system('cls')
     try:
         NroAsignacion = int(input('Ingrese el numero de asignacion : '))
@@ -10,7 +11,8 @@ def añadirasignacion(inventario):
         os.system('pause')
         return
     else:
-        if NroAsignacion in inventario['Asignaciones']:
+        NroAsignacion = str(NroAsignacion)
+        if NroAsignacion in inventario['Asignacion']:
             print('El numero de asignacion ya se encuentra registrado')
             os.system('pause')
             return
@@ -21,7 +23,7 @@ def añadirasignacion(inventario):
         os.system('pause')
         return
     else:
-        if((NroAsignacion > 31) or (NroAsignacion < 0)):
+        if((dia > 31) or (dia < 0)):
             print('Ingrese un dia valido')
             os.system('pause')
             return
@@ -52,7 +54,7 @@ def añadirasignacion(inventario):
         pass
     fecha = (f"{dia}/{mes}/{año}")
     opciones = ['1','2']
-    print('1. Personal\n3. Zona')
+    print('1. Personal\n2. Zona')
     op = input('Seleccione el tipo de asignacion : ')
     if op not in opciones:
         print('Ingrese una opciones valida')
@@ -81,15 +83,56 @@ def añadirasignacion(inventario):
     isrunasg = True
     while isrunasg:
         Activos = input('Ingrese el codigo de campus del activo el cual deseas asignar : ')
+        
         if Activos not in inventario['Activos']:
             print('El codigo de campus que ingresaste no se encuentra registrado en activos')
             os.system('pause')
             continue
         
-        #INCOMPLETOOOOOOOO
+        elif (inventario['Activos'][Activos]['Estado'] == "No Asignado"):
+            activoss.append(Activos)
+            rta12 = 'x'
+            while (rta12 not in ['S','s','']):
+                rta12 = input('Desea actualizar otro activo Si(S/s) Enter(No) :')
+                isrunasg = bool(rta12)
+        else:
+            print('No se puede asignar este activo')
+            os.system('pause')
+            return
         
-        elif inventario['Activos'][Activos]['Estado'] == "":
-            pass
+    
+    isrunis = True
+    while isrunis:
+        idperasig = input('Ingrese el id de la persona la cual esta realizando la asignacion : ')
+        if idperasig not in inventario['Personas']:
+            print('Ingerse un id valido')
+            os.system('pause')
+            continue
+        else:
+            isrunis = False
+    asignacion = {
+        "NroAsignacion":NroAsignacion,
+        "FechaAsignacion":fecha,
+        "TipoAsignacion":TipoAsignacion,
+        "AsignadoA":AsigandoA,
+        "Activos":activoss
+        
+    }
+    for value in activoss:
+        nrohistorial = str(len(inventario['Activos'][value]['historialActivo'])+1).zfill(3)
+        historialactivos = {
+            "NroID":nrohistorial,
+            "Fecha":fecha,
+            "tipoMov":"Asiganacion",
+            "idRespMov":idperasig
+        }
+        inventario['Activos'][value]['historialActivo'].update({nrohistorial:historialactivos})
+        inventario['Activos'][value]['Estado'] = "Asigando"
+        cf.UpdateFile('data.json',inventario)
+    inventario['Asignacion'].update({NroAsignacion:asignacion})
+    cf.UpdateFile('data.json',inventario)
+            
+        
     
     
     

@@ -7,6 +7,7 @@ import funciones.funcionesActivos as fa
 import funciones.funcionespersonas as fp
 import funciones.agregandoCVS as fcv
 import funciones.funcioneszonas as fz
+import funciones.asignaciones as asi
 dataa = {
     'Activos':{},
     'Personas':{},
@@ -151,7 +152,13 @@ if __name__ == "__main__":
             while Run4:         
                 op4 = mn.menuAsignacionA()
                 if op4 == "1":
-                    pass
+                    isrunAs1 = True
+                    while isrunAs1:
+                        asi.añadirasignacion(inventario)
+                        rtas1 = 'x'
+                        while (rtas1 not in ['N','n','']):
+                            rtas1 = input('Desea Regresar al Menu principal No(n/N) Enter(si) Regresar :')
+                            isrunAs1 = bool(rtas1)
                 if op4 == "2":
                     pass
                 if op4 == "3":
@@ -164,7 +171,7 @@ if __name__ == "__main__":
             while Run5:
                 op5 = mn.menuReportes()
                 if op5 == "1":
-                    pass
+                    pass       
                 if op5 == "2":
                     pass
                 if op5 == "3":

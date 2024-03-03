@@ -76,7 +76,7 @@ def Addactivos(activosdata: dict):
         "NroSerial":NroSerial,
         "Empresaresponsable":Empresaresponsable,
         "Estado":Estado,
-        "HistorialActivo":{}
+        "historialActivo":{}
     }
     activosdata['Activos'].update({CodCampus:Activo})
     cf.UpdateFile('data.json',activosdata)
