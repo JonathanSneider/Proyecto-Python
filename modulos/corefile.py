@@ -62,7 +62,7 @@ def Search(inventario: dict, opcion: str):
                         print('Nro de Zona no encontrado, ingreselo de nuevo')
                         os.system('pause')
                 elif opcion == 'Asignacion':
-                    if value['NroAsig'] == codCampus:
+                    if value['NroAsignacion'] == codCampus:
                         return key
                     elif len(inventario[opcion])-1 == idx:
                         print('Nro de Asignacion no encontrado, ingreselo de nuevo')
@@ -71,3 +71,5 @@ def Search(inventario: dict, opcion: str):
         print('no has ingresado ningun activo')
         os.system('pause')
         return
+    
+    

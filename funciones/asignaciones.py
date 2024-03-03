@@ -1,6 +1,6 @@
 import os
 import modulos.corefile as cf
-
+from tabulate import tabulate
 def añadirasignacion(inventario):
     activoss = []
     os.system('cls')
@@ -136,4 +136,12 @@ def añadirasignacion(inventario):
     
     
     
+def buscarasignacion(inventario):
+    os.system('cls')
+    print('Ingrese el numero de asignacion del cual desea ver')
+    resultado = cf.Search(inventario, 'Asignacion')
+    diccionario = inventario['Asignacion'][resultado]
+    lista = [(key, value)for key,value in diccionario.items()]
+    print(tabulate(lista, tablefmt="grid"))    
+    os.system('pause')
     

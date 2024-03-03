@@ -8,6 +8,8 @@ import funciones.funcionespersonas as fp
 import funciones.agregandoCVS as fcv
 import funciones.funcioneszonas as fz
 import funciones.asignaciones as asi
+import funciones.reportes as rp
+import funciones.movimientodeactivos as mva
 dataa = {
     'Activos':{},
     'Personas':{},
@@ -116,7 +118,7 @@ if __name__ == "__main__":
                         fz.agregarzonas(inventario)
                         rtaz1 = 'x'
                         while (rtaz1 not in ['S','s','']):
-                            rtaz1 = input('Desea Regresar agregar otra zona Si(S/s) Enter(No) :')
+                            rtaz1 = input('Desea agregar otra zona Si(S/s) Enter(No) :')
                             isrunz1 = bool(rtaz1)
                 if op3 == "2":
                     isrunZ22 = True
@@ -124,7 +126,7 @@ if __name__ == "__main__":
                         fz.actualizarzonas(inventario)
                         rtaz2 = 'x'
                         while (rtaz2 not in ['S','s','']):
-                            rtaz2 = input('Desea Regresar agregar otra zona Si(S/s) Enter(No) :')
+                            rtaz2 = input('Desea actualizar otra zona Si(S/s) Enter(No) :')
                             isrunZ22 = bool(rtaz2)
                 if op3 == "3":
                     isrunz33 = True
@@ -132,7 +134,7 @@ if __name__ == "__main__":
                         fz.eliminarzona(inventario)
                         rtaz3 = 'x'
                         while (rtaz3 not in ['S','s','']):
-                            rtaz3 = input('Desea Regresar agregar otra zona Si(S/s) Enter(No) :')
+                            rtaz3 = input('Desea  eliminar otra zona Si(S/s) Enter(No) :')
                             isrunz33 = bool(rtaz3)
                 if op3 == "4":
                     isrunZ4 = True
@@ -140,7 +142,7 @@ if __name__ == "__main__":
                         fz.buscarzona(inventario)
                         rtaz4 = 'x'
                         while (rtaz4 not in ['S','s','']):
-                            rtaz4 = input('Desea Regresar agregar otra zona Si(S/s) Enter(No) :')
+                            rtaz4 = input('Desea buscar otra zona Si(S/s) Enter(No) :')
                             isrunZ4 = bool(rtaz4)
                 if op3 == "5":
                     rta3 = 'x'
@@ -156,11 +158,17 @@ if __name__ == "__main__":
                     while isrunAs1:
                         asi.añadirasignacion(inventario)
                         rtas1 = 'x'
-                        while (rtas1 not in ['N','n','']):
-                            rtas1 = input('Desea Regresar al Menu principal No(n/N) Enter(si) Regresar :')
+                        while (rtas1 not in ['S','s','']):
+                            rtas1 = input('Desea añadir otra asigancion Si(s/S) Enter(no) Regresar :')
                             isrunAs1 = bool(rtas1)
                 if op4 == "2":
-                    pass
+                    isrunAs2 = True
+                    while isrunAs2:
+                        asi.buscarasignacion(inventario)
+                        rtas12 = 'x'
+                        while (rtas12 not in ['S','s','']):
+                            rtas12 = input('Desea buscar otra asigancion Si(s/S) Enter(no) Regresar :')
+                            isrunAs2 = bool(rtas12)
                 if op4 == "3":
                     rta4 = 'x'
                     while (rta4 not in ['N','n','']):
@@ -171,7 +179,13 @@ if __name__ == "__main__":
             while Run5:
                 op5 = mn.menuReportes()
                 if op5 == "1":
-                    pass       
+                    isrunRA = True
+                    while isrunRA:
+                        rp.listaractivo(inventario)
+                        rtar4 = 'x'
+                        while (rtar4 not in ['N','n','']):
+                            rtar4 = input('Desea Regresar al Menu de reportes No(n/N) Enter(si) Regresar :')
+                            isrinRA = bool(rtar4)
                 if op5 == "2":
                     pass
                 if op5 == "3":
@@ -192,11 +206,23 @@ if __name__ == "__main__":
                 if op6 == "1":
                     pass
                 if op6 == "2":
-                    pass
+                    isruDA1 = True
+                    while isruDA1:
+                        mva.dardebajAc(inventario)
+                        rtaDa = 'x'
+                        while (rtaDa not in ['S','s','']):
+                            rtaDa = input('Desea buscar otra asigancion Si(s/S) Enter(no) Regresar :')
+                            isruDA1 = bool(rtaDa)
                 if op6 == "3":
                     pass
                 if op6 == "4":
-                    pass
+                    isruDA2 = True
+                    while isruDA2:
+                        mva.garantiact(inventario)
+                        rtaDa2 = 'x'
+                        while (rtaDa2 not in ['S','s','']):
+                            rtaDa2 = input('Desea buscar otra asigancion Si(s/S) Enter(no) Regresar :')
+                            isruDA2 = bool(rtaDa2)
                 if op6 == "5":
                     rta6 = 'x'
                     while (rta6 not in ['N','n','']):
