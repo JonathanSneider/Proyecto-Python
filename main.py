@@ -204,14 +204,20 @@ if __name__ == "__main__":
             while Run6:
                 op6 = mn.menuMAct()
                 if op6 == "1":
-                    pass
+                    isrunDA11 = True
+                    while isrunDA11:
+                        mva.retornodeactivos(inventario)
+                        rtaDaa = 'x'
+                        while (rtaDaa not in ['S','s','']):
+                            rtaDaa = input('Desea retornar otro activo Si(s/S) Enter(no) Regresar :')
+                            isrunDA11 = bool(rtaDaa)
                 if op6 == "2":
                     isruDA1 = True
                     while isruDA1:
                         mva.dardebajAc(inventario)
                         rtaDa = 'x'
                         while (rtaDa not in ['S','s','']):
-                            rtaDa = input('Desea buscar otra asigancion Si(s/S) Enter(no) Regresar :')
+                            rtaDa = input('Desea dar de baja otro activo Si(s/S) Enter(no) Regresar :')
                             isruDA1 = bool(rtaDa)
                 if op6 == "3":
                     pass
@@ -221,7 +227,7 @@ if __name__ == "__main__":
                         mva.garantiact(inventario)
                         rtaDa2 = 'x'
                         while (rtaDa2 not in ['S','s','']):
-                            rtaDa2 = input('Desea buscar otra asigancion Si(s/S) Enter(no) Regresar :')
+                            rtaDa2 = input('Desea enviar a garantia otro activo Si(s/S) Enter(no) Regresar :')
                             isruDA2 = bool(rtaDa2)
                 if op6 == "5":
                     rta6 = 'x'

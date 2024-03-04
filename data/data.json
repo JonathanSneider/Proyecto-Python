@@ -1,26 +1,5 @@
 {
     "Activos": {
-        "asdsad": {
-            "CodTransaccion": "31231",
-            "NroFormulario": "aaaa",
-            "codCampus": "asdsad",
-            "Marca": "LG",
-            "Categoria": "JUEGO",
-            "Tipo": "",
-            "VlrUnitario": -9999,
-            "Proveedor": "dada",
-            "NroSerial": "adad",
-            "Empresaresponsable": "adasd",
-            "Estado": "En Garantia",
-            "historialActivo": {
-                "003": {
-                    "NroID": "003",
-                    "Fecha": "12/12/2023",
-                    "tipoMov": "Asiganacion",
-                    "idRespMov": "2222"
-                }
-            }
-        },
         "CPU001": {
             "codTransaccion": "327",
             "nroFormulario": "966217823",
@@ -7412,7 +7391,7 @@
             "Proveedor": "dadad",
             "NroSerial": "adads",
             "Empresaresponsable": "adsasd",
-            "Estado": "No Asignado",
+            "Estado": "Dado de Baja",
             "historialActivo": {}
         },
         "aaa": {
@@ -7426,12 +7405,51 @@
             "Proveedor": "adada",
             "NroSerial": "-999",
             "Empresaresponsable": "adadas",
-            "Estado": "Asigando",
+            "Estado": "Dado de Baja",
             "historialActivo": {
                 "001": {
                     "NroID": "001",
                     "Fecha": "14/12/2024",
-                    "tipoMov": "Asiganacion",
+                    "tipoMov": "Asignacion",
+                    "idRespMov": "2222"
+                },
+                "002": {
+                    "NroID": "002",
+                    "Fecha": "12/12/2020",
+                    "tipoMov": "Retorno Activo",
+                    "idRespMov": "222"
+                },
+                "003": {
+                    "NroID": "003",
+                    "Fecha": "31/12/2024",
+                    "tipoMov": "Dado de Baja",
+                    "idRespMov": "222"
+                }
+            }
+        },
+        "aaa111": {
+            "CodTransaccion": "12312313123",
+            "NroFormulario": "asdad",
+            "codCampus": "aaa111",
+            "Marca": "LG",
+            "Categoria": "JUEGO",
+            "Tipo": "CPU",
+            "VlrUnitario": 123123.0,
+            "Proveedor": "sdada",
+            "NroSerial": "12313",
+            "Empresaresponsable": "ada",
+            "Estado": "Asigando",
+            "historialActivo": {
+                "001": {
+                    "NroID": "001",
+                    "Fecha": "12/12/2022",
+                    "tipoMov": "Garantia",
+                    "idRespMov": "2222"
+                },
+                "002": {
+                    "NroID": "002",
+                    "Fecha": "2/12/2023",
+                    "tipoMov": "Retorno Activo",
                     "idRespMov": "2222"
                 }
             }

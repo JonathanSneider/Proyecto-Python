@@ -123,11 +123,11 @@ def añadirasignacion(inventario):
         historialactivos = {
             "NroID":nrohistorial,
             "Fecha":fecha,
-            "tipoMov":"Asiganacion",
+            "tipoMov":"Asignacion",
             "idRespMov":idperasig
         }
         inventario['Activos'][value]['historialActivo'].update({nrohistorial:historialactivos})
-        inventario['Activos'][value]['Estado'] = "Asigando"
+        inventario['Activos'][value]['Estado'] = "Asignado"
         cf.UpdateFile('data.json',inventario)
     inventario['Asignacion'].update({NroAsignacion:asignacion})
     cf.UpdateFile('data.json',inventario)
