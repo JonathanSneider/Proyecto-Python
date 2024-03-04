@@ -31,7 +31,23 @@ def delOp(dataInventario,opcion):
         print('El codigo ingresado no esta registrado')
         os.system('pause')
         return
-    
+    if opcion == "Activos":
+        if dataInventario[opcion][delVal]['Estado'] == "Asignado":
+            pass
+        else:
+            print('El activo ingresado no se puede eliminar')
+            os.system('pause')
+            return
+    else:
+        pass
+    if opcion == "Personas":
+        for key,value in dataInventario['Asignacion'].items():
+            if dataInventario['Asignacion'][key]['AsignadoA'] == delVal:
+                print("No se puede eliminar esta persona")
+                os.system('pause')
+                return
+    else:
+        pass
     dataInventario[opcion].pop(delVal)
     UpdateFile('data.json',dataInventario)
     os.system('pause')

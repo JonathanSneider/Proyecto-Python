@@ -7426,8 +7426,15 @@
             "Proveedor": "adada",
             "NroSerial": "-999",
             "Empresaresponsable": "adadas",
-            "Estado": "No Asignado",
-            "historialActivo": {}
+            "Estado": "Asigando",
+            "historialActivo": {
+                "001": {
+                    "NroID": "001",
+                    "Fecha": "14/12/2024",
+                    "tipoMov": "Asiganacion",
+                    "idRespMov": "2222"
+                }
+            }
         }
     },
     "Personas": {
@@ -7439,15 +7446,6 @@
             "TelefonoCasa": 31213123,
             "TelefonoPersonal": 1313,
             "telefonoficina": 31231
-        },
-        "1111": {
-            "id": "1111",
-            "nombre": "ada",
-            "Email": "dad",
-            "TelefonoMovil": 2313,
-            "TelefonoCasa": 1313,
-            "TelefonoPersonal": 1313,
-            "telefonoficina": 1313
         },
         "2222": {
             "id": "2222",
@@ -7483,6 +7481,15 @@
             "AsignadoA": "222",
             "Activos": [
                 "asdsad"
+            ]
+        },
+        "112": {
+            "NroAsignacion": "112",
+            "FechaAsignacion": "14/12/2024",
+            "TipoAsignacion": "Zona",
+            "AsignadoA": "22",
+            "Activos": [
+                "aaa"
             ]
         }
     }
