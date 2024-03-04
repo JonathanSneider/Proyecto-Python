@@ -181,7 +181,7 @@ if __name__ == "__main__":
                 if op5 == "1":
                     isrunRA = True
                     while isrunRA:
-                        rp.listaractivo(inventario)
+                        rp.resportesactivos(inventario)
                         rtar4 = 'x'
                         while (rtar4 not in ['N','n','']):
                             rtar4 = input('Desea Regresar al Menu de reportes No(n/N) Enter(si) Regresar :')
