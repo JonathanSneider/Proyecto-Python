@@ -220,7 +220,13 @@ if __name__ == "__main__":
                             rtaDa = input('Desea dar de baja otro activo Si(s/S) Enter(no) Regresar :')
                             isruDA1 = bool(rtaDa)
                 if op6 == "3":
-                    pass
+                    isrunDA33 = True
+                    while isrunDA33:
+                        mva.cambiarasignacion(inventario)
+                        rtaDa213 = 'x'
+                        while (rtaDa213 not in ['S','s','']):
+                            rtaDa213 = input('Desea re asiganar otro activo Si(s/S) Enter(no) Regresar :')
+                            isrunDA33 = bool(rtaDa213)
                 if op6 == "4":
                     isruDA2 = True
                     while isruDA2:

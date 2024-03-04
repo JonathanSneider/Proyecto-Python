@@ -152,11 +152,13 @@ def delActivos(inventario : dict):
     print('Ingrese el Codigo de campus del activo que desea eliminar')
     cf.delOp(inventario,'Activos')
     
+
 def buscaractivos(inventario:dict):
     os.system('cls')
     print('Ingrese el codigo de campus del activo el cual desea buscar')
     resultado = cf.Search(inventario, 'Activos')
     diccionario = inventario['Activos'][resultado]
+    del(diccionario['historialActivo'])
     lista = [(key,value)for key,value in diccionario.items()]
     print(tabulate(lista, tablefmt="grid"))
     os.system('pause')

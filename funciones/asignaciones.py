@@ -2,6 +2,7 @@ import os
 import modulos.corefile as cf
 from tabulate import tabulate
 def añadirasignacion(inventario):
+    contador = 0
     activoss = []
     os.system('cls')
     try:
@@ -80,6 +81,13 @@ def añadirasignacion(inventario):
             return
         else:
             pass
+    for key, value in inventario['Asignacion'].items():
+        if value["AsignadoA"] == AsigandoA:
+            for values in enumerate(value['Activos']):
+                contador += 1
+        else:
+            pass
+                
     isrunasg = True
     while isrunasg:
         Activos = input('Ingrese el codigo de campus del activo el cual deseas asignar : ')
@@ -91,9 +99,14 @@ def añadirasignacion(inventario):
         
         elif (inventario['Activos'][Activos]['Estado'] == "No Asignado"):
             activoss.append(Activos)
+            contador += 1
+            if contador == inventario['Zonas'][AsigandoA]['TotalCapacidad']:
+                print('Se a superado la capicidad de la zona')
+                os.system('pause')
+                isrunasg = False
             rta12 = 'x'
             while (rta12 not in ['S','s','']):
-                rta12 = input('Desea actualizar otro activo Si(S/s) Enter(No) :')
+                rta12 = input('Desea asiganar otro activo Si(S/s) Enter(No) :')
                 isrunasg = bool(rta12)
         else:
             print('No se puede asignar este activo')

@@ -7391,8 +7391,21 @@
             "Proveedor": "dadad",
             "NroSerial": "adads",
             "Empresaresponsable": "adsasd",
-            "Estado": "Dado de Baja",
-            "historialActivo": {}
+            "Estado": "Asignado",
+            "historialActivo": {
+                "001": {
+                    "NroID": "001",
+                    "Fecha": "12/12/2024",
+                    "tipoMov": "Asignacion",
+                    "idRespMov": "222"
+                },
+                "002": {
+                    "NroID": "002",
+                    "Fecha": "12/12/2024",
+                    "tipoMov": "Asignacion",
+                    "idRespMov": "222"
+                }
+            }
         },
         "aaa": {
             "CodTransaccion": "2313",
@@ -7438,7 +7451,7 @@
             "Proveedor": "sdada",
             "NroSerial": "12313",
             "Empresaresponsable": "ada",
-            "Estado": "Asigando",
+            "Estado": "Dado de Baja",
             "historialActivo": {
                 "001": {
                     "NroID": "001",
@@ -7451,6 +7464,39 @@
                     "Fecha": "2/12/2023",
                     "tipoMov": "Retorno Activo",
                     "idRespMov": "2222"
+                },
+                "003": {
+                    "NroID": "003",
+                    "Fecha": "12/12/2022",
+                    "tipoMov": "Garantia",
+                    "idRespMov": "222"
+                },
+                "004": {
+                    "NroID": "004",
+                    "Fecha": "12/12/2022",
+                    "tipoMov": "Dado de Baja",
+                    "idRespMov": "222"
+                }
+            }
+        },
+        "11223": {
+            "CodTransaccion": "1515",
+            "NroFormulario": "12521",
+            "codCampus": "11223",
+            "Marca": "COMPUMAX",
+            "Categoria": "JUEGO",
+            "Tipo": "CPU",
+            "VlrUnitario": 125415.0,
+            "Proveedor": "sdasd",
+            "NroSerial": "215215",
+            "Empresaresponsable": "dada",
+            "Estado": "Asignado",
+            "historialActivo": {
+                "001": {
+                    "NroID": "001",
+                    "Fecha": "12/12/2022",
+                    "tipoMov": "Asignacion",
+                    "idRespMov": "222"
                 }
             }
         }
@@ -7476,10 +7522,10 @@
         }
     },
     "Zonas": {
-        "22": {
-            "NroZona": "22",
-            "NombreZona": "aaaa",
-            "TotalCapacidad": 33
+        "01": {
+            "NroZona": "01",
+            "NombreZona": "Sputnik",
+            "TotalCapacidad": 2
         }
     },
     "Asignacion": {
@@ -7487,7 +7533,7 @@
             "NroAsignacion": 11,
             "FechaAsignacion": "12/12/2024",
             "TipoAsignacion": "Zona",
-            "AsignadoA": "22",
+            "AsignadoA": "01",
             "Activos": [
                 "asdsad"
             ]
@@ -7508,6 +7554,24 @@
             "AsignadoA": "22",
             "Activos": [
                 "aaa"
+            ]
+        },
+        "1122": {
+            "NroAsignacion": "1122",
+            "FechaAsignacion": "12/12/2024",
+            "TipoAsignacion": "Persona",
+            "AsignadoA": "222",
+            "Activos": [
+                "111a"
+            ]
+        },
+        "123132": {
+            "NroAsignacion": "123132",
+            "FechaAsignacion": "12/12/2022",
+            "TipoAsignacion": "Zona",
+            "AsignadoA": "01",
+            "Activos": [
+                "11223"
             ]
         }
     }
