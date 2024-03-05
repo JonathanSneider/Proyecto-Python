@@ -18,9 +18,12 @@ dataa = {
 }
 
 inventario = cf.checkFile("data.json",dataa)
+# Se añadio el archivo csv a data.json
 #fcv.añadiendoactivos(inventario)
 #cf.UpdateFile('data.json', inventario)
 
+
+#se empiezan a mostar los menus
 if __name__ == "__main__":
     Runpro = True
     while Runpro:

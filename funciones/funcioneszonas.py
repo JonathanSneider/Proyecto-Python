@@ -11,7 +11,7 @@ def agregarzonas(inventario:dict):
         os.system('pause')
         return
     else:
-        if (NroZona < 0):
+        if (NroZona < 0):#Verifica que el numero de identificacion de la zona sea valida
             print('Ingrese un numero de identificacion valido')
             os.system('pause')
             return

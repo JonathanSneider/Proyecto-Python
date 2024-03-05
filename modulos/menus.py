@@ -8,8 +8,9 @@ def menuPrincipal():
     -----------------------------------------
     """
     print(titulo)
-    opciones = ["1","2","3","4","5","6","7"]
+    opciones = ["1","2","3","4","5","6","7"]#opciones validas menu principal
     menu =[["1.", "ACTIVOS"], ["2.", "PERSONAL"], ["3.", "ZONAS"], ["4.", "ASIGNACION DE ACTIVOS"], ["5.", "REPORTES"], ["6.", "MOVIMIENTO DE ACTIVOS"], ["7.", "SALIR"]]
+    #se muestra las opciones junto con su valor en un tabla usando tabulate
     print(tabulate(menu, tablefmt="grid"))
     opcion = input("Seleccione una opcion : ")
     if opcion not in opciones:
@@ -29,8 +30,9 @@ def menuAct():
         //////////////////
         """
     print(titulo)
-    opciones = ["1","2","3","4","5"]
+    opciones = ["1","2","3","4","5"]#opciones validas menu activos
     menu =[["1.", "AGREGAR ACTIVO"], ["2.", "EDITAR ACTIVO"], ["3.", "ELIMINAR ACTIVO"], ["4.", "BUSCAR ACTIVO"], ["5.", "REGRESAR AL MENU PRINCIPAL"]]
+    #se muestra las opciones junto con su valor en un tabla usando tabulate
     print(tabulate(menu, tablefmt="grid"))
     opcion = input("Seleccione una opcion : ")
     if opcion not in opciones:
@@ -47,8 +49,9 @@ def menuPer():
         //////////////////
     """
     print(titulo2)
-    opciones = ["1","2","3","4","5"]
+    opciones = ["1","2","3","4","5"]#opciones validas menu personas
     menu =[["1.", "AGREGAR PERSONAL"], ["2.", "EDITAR PERSONAL"], ["3.", "ELIMINAR PERSONAL"], ["4.", "BUSCAR PERSONAL"], ["5.", "REGRESAR AL MENU PRINCIPAL"]]
+    #se muestra las opciones junto con su valor en un tabla usando tabulate
     print(tabulate(menu, tablefmt="grid"))
     opcion = input("Seleccione una opcion : ")
     if opcion not in opciones:
@@ -65,8 +68,9 @@ def menuZon():
         //////////////////
         """
     print(titulo3)
-    opciones = ["1","2","3","4","5"]
+    opciones = ["1","2","3","4","5"]#opciones validas menu zonas
     menu =[["1.", "AGREGAR ZONA"], ["2.", "EDITAR ZONA"], ["3.", "ELIMINAR ZONA"], ["4.", "BUSCAR ZONA"], ["5.", "REGRESAR AL MENU PRINCIPAL"]]
+    #se muestra las opciones junto con su valor en un tabla usando tabulate
     print(tabulate(menu, tablefmt="grid"))
     opcion = input("Seleccione una opcion : ")
     if opcion not in opciones:
@@ -84,8 +88,9 @@ def menuAsignacionA():
         ++++++++++++++++++++++++++++++++
         """
     print(titulo4)
-    opciones = ["1","2","3"]
+    opciones = ["1","2","3"]#opciones validas menu asignaciones
     menu =[["1.", "CREAR ASIGNACION"], ["2.", "BUSCAR ASIGNACION"], ["3.", "REGRESAR AL MENU PRINCIPAL"]]
+    #se muestra las opciones junto con su valor en un tabla usando tabulate
     print(tabulate(menu, tablefmt="grid"))
     opcion = input("Seleccione una opcion : ")
     if opcion not in opciones:
@@ -104,8 +109,9 @@ def menuReportes():
         *+++++++++++++++++*
         """
     print(titulo4)
-    opciones = ["1","2","3","4","5","6"]
+    opciones = ["1","2","3","4","5","6"]#opciones validas menu reportes
     menu =[["1.", "LISTAR TODOS LOS ACTIVOS"], ["2.", "LISTAR ACTIVOS POR CATEGORIA"], ["3.", "LISTAR ACTIVOS DADOS DE BAJA POR DAÑO"], ["4.", "LISTAR ACTIVOS Y ASIGNACION"], ["5.", "LISTAR HISTORIAL DE MOV. DE ACTIVO"], ["6.", "REGRESAR AL MENU PRINCIPAL"]]
+    #se muestra las opciones junto con su valor en un tabla usando tabulate
     print(tabulate(menu, tablefmt="grid"))
     opcion = input("Seleccione una opcion : ")
     if opcion not in opciones:
@@ -126,8 +132,9 @@ def menuMAct():
         --------------------------------
         """
     print(titulo4)
-    opciones = ["1","2","3","4","5"]
+    opciones = ["1","2","3","4","5"]#opciones validas menu Movimiento de activos
     menu =[["1.", "RETORNO DE ACTIVO"], ["2.", "DAR DE BAJA ACTIVO"], ["3.", "CAMBIAR ASIGNACION DE ACTIVO"], ["4.", "ENVIAR A GARANTIA ACTIVO"], ["5.", "REGRESAR AL MENU PRINCIPAL"]]
+    #se muestra las opciones junto con su valor en un tabla usando tabulate
     print(tabulate(menu, tablefmt="grid"))
     opcion = input("Seleccione una opcion : ")
     if opcion not in opciones:

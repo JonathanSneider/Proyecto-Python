@@ -6,7 +6,7 @@ def resportesactivos(inventario:dict):
     Activos = []
     borrandohistorial = {}
     for key, value in inventario['Activos'].items():
-        borrandohistorial[key] = value.copy()
+        borrandohistorial[key] = value.copy()#Se agrega sopi el diccionario inventario y se pone en eñ diccionario borrandohistorial
     for key, value in borrandohistorial.items():
         try:
             del borrandohistorial[key]['historialActivo']
@@ -15,6 +15,7 @@ def resportesactivos(inventario:dict):
     for keys, values in borrandohistorial.items():
         Activos.append(values)
     lines_per_page = 20
+    #Sirve para que al listar los activos se impriman de forma que solo muestre 20 activos por pagina y para pasarlo toque darle enter
     for idx, i in enumerate(range(0, len(Activos), lines_per_page)):
         subset_data = Activos[i:i + lines_per_page]
         totalPag = len(Activos)//lines_per_page
@@ -47,6 +48,7 @@ def ActivosCate(inventario:dict):
         for keys, values in borrandohistorial.items():
             Activos.append(values)
         lines_per_page = 15
+        #Sirve para que al listar los activos se impriman de forma que solo muestre 15 activos por pagina y para pasarlo toque darle enter
         for idx, i in enumerate(range(0, len(Activos), lines_per_page)):
             subset_data = Activos[i:i + lines_per_page]
             totalPag = len(Activos)//lines_per_page
@@ -67,6 +69,7 @@ def ActivosCate(inventario:dict):
         for keys, values in borrandohistorial.items():
             Activos.append(values)
         lines_per_page = 20
+        #Sirve para que al listar los activos se impriman de forma que solo muestre 20 activos por pagina y para pasarlo toque darle enter
         for idx, i in enumerate(range(0, len(Activos), lines_per_page)):
             subset_data = Activos[i:i + lines_per_page]
             totalPag = len(Activos)//lines_per_page
@@ -87,6 +90,7 @@ def ActivosCate(inventario:dict):
         for keys, values in borrandohistorial.items():
             Activos.append(values)
         lines_per_page = 20
+        #Sirve para que al listar los activos se impriman de forma que solo muestre 20 activos por pagina y para pasarlo toque darle enter
         for idx, i in enumerate(range(0, len(Activos), lines_per_page)):
             subset_data = Activos[i:i + lines_per_page]
             totalPag = len(Activos)//lines_per_page
@@ -107,6 +111,7 @@ def activosdadobaja(inventario:dict):
     for keys, values in borrandohistorial.items():
         Activos.append(values)
     lines_per_page = 20
+    #Sirve para que al listar los activos se impriman de forma que solo muestre 20 activos por pagina y para pasarlo toque darle enter
     for idx, i in enumerate(range(0, len(Activos), lines_per_page)):
         subset_data = Activos[i:i + lines_per_page]
         totalPag = len(Activos)//lines_per_page

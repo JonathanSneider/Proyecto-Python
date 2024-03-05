@@ -89,7 +89,7 @@ def añadirasignacion(inventario):
             pass
                 
     isrunasg = True
-    while isrunasg:
+    while isrunasg:#se inicia un siclo while para que pueda asignar la cantidad que quiera seguida de activos
         Activos = input('Ingrese el codigo de campus del activo el cual deseas asignar : ')
         
         if Activos not in inventario['Activos']:
@@ -97,7 +97,7 @@ def añadirasignacion(inventario):
             os.system('pause')
             continue
         
-        elif (inventario['Activos'][Activos]['estado'] == "No Asignado"):
+        elif (inventario['Activos'][Activos]['estado'] == "No Asignado"):#Se verifica que el estado sea No Asignado para poder asignarlo a una zona o persona
             activoss.append(Activos)
             contador += 1
             if TipoAsignacion == "Persona":
@@ -110,14 +110,14 @@ def añadirasignacion(inventario):
             while (rta12 not in ['S','s','']):
                 rta12 = input('Desea asiganar otro activo Si(S/s) Enter(No) :')
                 isrunasg = bool(rta12)
-        else:
+        else:# si no esta en estao No asignado devuelve un print y termina la funcion
             print('No se puede asignar este activo')
             os.system('pause')
             return
         
     
     isrunis = True
-    while isrunis:
+    while isrunis:#se inicia un while para que no se permita que la persona ingrese una id de persona que no este registrada
         idperasig = input('Ingrese el id de la persona la cual esta realizando la asignacion : ')
         if idperasig not in inventario['Personas']:
             print('Ingerse un id valido')
@@ -142,7 +142,7 @@ def añadirasignacion(inventario):
             "idRespMov":idperasig
         }
         inventario['Activos'][value]['historialActivo'].update({nrohistorial:historialactivos})
-        inventario['Activos'][value]['estado'] = "Asignado"
+        inventario['Activos'][value]['estado'] = "Asignado"#se le cambia el valor al estado de valor en el diccionario inventario['Activos']
         cf.UpdateFile('data.json',inventario)
     inventario['Asignacion'].update({NroAsignacion:asignacion})
     cf.UpdateFile('data.json',inventario)
@@ -155,7 +155,9 @@ def buscarasignacion(inventario):
     os.system('cls')
     print('Ingrese el numero de asignacion del cual desea ver')
     resultado = cf.Search(inventario, 'Asignacion')
+    #se usa la variable resultado obtenida por la funcion Search de corefile para añadir este a un diccionario aparte
     diccionario = inventario['Asignacion'][resultado]
+    #se usa un siclo for para poder añadir los valores de este diccionario recien creado a una lista y 
     lista = [(key, value)for key,value in diccionario.items()]
     print(tabulate(lista, tablefmt="grid"))    
     os.system('pause')

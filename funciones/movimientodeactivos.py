@@ -48,7 +48,7 @@ def retornodeactivos(inventario):
             os.system('pause')
             return
         pass
-    fecha = (f"{dia}/{mes}/{año}")
+    fecha = (f"{dia}/{mes}/{año}")#se junta las variables de dia mes y año para formar una fecha en concreto
     tipoMov = "Retorno Activo"
     isrunis = True
     while isrunis:
@@ -60,7 +60,7 @@ def retornodeactivos(inventario):
         else:
             isrunis = False
     
-    nrohistorial = str(len(inventario['Activos'][codCampus]['historialActivo'])+1).zfill(3)
+    nrohistorial = str(len(inventario['Activos'][codCampus]['historialActivo'])+1).zfill(3)#se usa el len y el zfill para poder asignarle un numero automatico a nrohistorial
     historialactivos = {
         "NroID":nrohistorial,
         "Fecha":fecha,
@@ -83,7 +83,7 @@ def dardebajAc(inventario:dict):
         os.system('pause')
         return
     else:
-        if((dia > 31) or (dia < 0)):
+        if((dia > 31) or (dia < 0)):#se verifica que el dia ingresado sea valido
             print('Ingrese un dia valido')
             os.system('pause')
             return
@@ -95,7 +95,7 @@ def dardebajAc(inventario:dict):
         os.system('pause')
         return
     else:
-        if((mes > 12) or (mes < 0)):
+        if((mes > 12) or (mes < 0)):#se verifica que el mes ingresado sea valido
             print('Ingrese un mes valido')
             os.system('pause')
             return
@@ -326,9 +326,9 @@ def cambiarasignacion(inventario:dict):
             break
         else:
             pass
-    inventario['Activos'][valor]['historialActivo'].update({nrohistorial:historialactivos})
+    inventario['Activos'][valor]['historialActivo'].update({nrohistorial:historialactivos})#se añadin todos los valores nuevos al diccionario inventario
     inventario['Activos'][valor]['estado'] = "Asigando"
     inventario['Asignacion'].update({NroAsignacion:asignacion})
-    cf.UpdateFile('data.json',inventario)
+    cf.UpdateFile('data.json',inventario)#se usa para actualizar el data.json
     
     

@@ -1,6 +1,8 @@
 import json 
 import os
 BASE="data/"
+
+#verifica si el json data existe y si no lo crea
 def checkFile(archivo:str,data):
     if(os.path.isfile(BASE+ archivo)):
         with open(BASE + archivo ,"r") as bw:
@@ -11,13 +13,15 @@ def checkFile(archivo:str,data):
             json.dump(data,bw,indent=4)
             return data
 
-        
+
+#Actualizar cualquier informacion      
 def UpdateFile(archivo,data):
     with open(BASE+ archivo,'r+') as fw:
         json.dump(data,fw,indent=4)
         fw.truncate()
         
-        
+
+#eliminando algun valor
 def delOp(dataInventario,opcion):
     os.system('cls')
     if opcion == 'Activos':

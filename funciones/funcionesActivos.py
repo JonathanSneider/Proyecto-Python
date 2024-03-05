@@ -5,7 +5,7 @@ dataactivos = {}
 marca = ['LG','COMPUMAX','LOGITECH','BENQ','ASUS','LENOVO','HP']
 categoria = ['EQUIPO DE COMPUTO','ELECTRODOMESTICO','JUEGO']
 tipo = ['MONITOR','CPU','TECLADO','MOUSE','AIRE ACONDICIONADO','PORTATIL','IMPRESORA']
-def VRF(valor,el : str,valorr : str):
+def VRF(valor,el : str,valorr : str):#Esta funcion se usa para poder verificar si la opcion seleccionada es valida 
     os.system('cls')
     runVRF = True
     while runVRF:
@@ -20,11 +20,11 @@ def VRF(valor,el : str,valorr : str):
             menu =[["MONITOR"], ["CPU"], ["TECLADO"], ["MOUSE"], ["AIRE ACONDICIONADO"], ["PORTATIL"], ["IMPRESORA"]]
             print(tabulate(menu, tablefmt="grid"))
         op = input(f'Ingrese {el} {valorr} del activo : ').upper()
-        if op not in valor:
+        if op not in valor:#Se verifica si la opcion ingresada se encuentra en la lista determinada y s ino esta se muestra un error y luego se regresa
             print('Ingresaste un dato invalido')
             os.system('pause')
             continue
-        else:
+        else:#si la opcion si se encuentra en la lista determina la funcion retorna la opcion
             return op
             
             
@@ -44,7 +44,7 @@ def Addactivos(activosdata: dict):
     categoriaa = VRF(categoria,"la","categoria")
     tipoo = VRF(tipo,"el","tipo")
     isrunVlr = True
-    while isrunVlr:
+    while isrunVlr:#Se inicia un while para verificar que el valor unitario sea valido 
         try:
             VlrUnitario = float(input('Ingrese el valor unitario : '))
         except ValueError:
@@ -148,7 +148,7 @@ def updateActivos(activosdata:dict):
         atajo['empresaresponsable']=valorN
         cf.UpdateFile('data.json',activosdata)
 
-def delActivos(inventario : dict):
+def delActivos(inventario : dict):#funcion utilizada para eliminar activo
     print('Ingrese el Codigo de campus del activo que desea eliminar')
     cf.delOp(inventario,'Activos')
     
@@ -157,10 +157,10 @@ def buscaractivos(inventario:dict):
     os.system('cls')
     print('Ingrese el codigo de campus del activo el cual desea buscar')
     resultado = cf.Search(inventario, 'Activos')
-    diccionario = inventario['Activos'][resultado]
-    del(diccionario['historialActivo'])
-    lista = [(key,value)for key,value in diccionario.items()]
-    print(tabulate(lista, tablefmt="grid"))
+    diccionario = inventario['Activos'][resultado]#se agrega el activo seleccionado a un inventario nuevo 
+    del(diccionario['historialActivo'])#Se elimina el historial activo para evitar errores al momento de listar
+    lista = [(key,value)for key,value in diccionario.items()]#se agregar con un for el diccionario a una lista
+    print(tabulate(lista, tablefmt="grid"))#se imprime la tabla del activo usando tabulate y la lista
     os.system('pause')
     
 
