@@ -127,6 +127,12 @@ def historialamov(inventario:dict):
     historials = []
     for keys, values in inventario['Activos'][activoss].items():
         if keys == "historialActivo":
+            if len(inventario['Activos'][activoss][keys]) == 0:
+                print('El activo no tiene historial de reportes')
+                os.system('pause')
+                return
+            else:
+                pass
             for value in inventario['Activos'][activoss][keys].items():
                 historials.append(value)
     lines_per_page = 20
