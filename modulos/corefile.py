@@ -32,12 +32,12 @@ def delOp(dataInventario,opcion):
         os.system('pause')
         return
     if opcion == "Activos":
-        if dataInventario[opcion][delVal]['Estado'] == "Asignado":
-            pass
-        else:
+        if dataInventario[opcion][delVal]['estado'] == "Asignado":
             print('El activo ingresado no se puede eliminar')
             os.system('pause')
             return
+        else:
+            pass
     else:
         pass
     if opcion == "Personas":

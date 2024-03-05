@@ -65,17 +65,17 @@ def Addactivos(activosdata: dict):
     Estado = 'No Asignado'
     Activo ={
         
-        "CodTransaccion":CodTransaccion,
-        "NroFormulario":NroFormulario,
+        "codTransaccion":CodTransaccion,
+        "nroFormulario":NroFormulario,
         "codCampus":CodCampus,
-        "Marca":marcaa,
-        "Categoria":categoriaa,
-        "Tipo":tipoo,
-        "VlrUnitario":VlrUnitario,
-        "Proveedor":Proveedor,
-        "NroSerial":NroSerial,
-        "Empresaresponsable":Empresaresponsable,
-        "Estado":Estado,
+        "marca":marcaa,
+        "categoria":categoriaa,
+        "tipo":tipoo,
+        "vlrUnitario":VlrUnitario,
+        "proveedor":Proveedor,
+        "nroSerial":NroSerial,
+        "empresaresponsable":Empresaresponsable,
+        "estado":Estado,
         "historialActivo":{}
     }
     activosdata['Activos'].update({CodCampus:Activo})
@@ -97,23 +97,23 @@ def updateActivos(activosdata:dict):
         pass
     if op == '1':
         valorN = input('Ingrese el Nuevo codigo de transaccion : ')
-        atajo['CodTransaccion']= valorN
+        atajo['codTransaccion']= valorN
         cf.UpdateFile('data.json',activosdata)
     if op == '2':
         valorN = input('Ingrese el Nuevo Numero de formulario : ')
-        atajo['NroFormulario']=valorN
+        atajo['nroFormulario']=valorN
         cf.UpdateFile('data.json',activosdata)
     if op == '3':
         valorN = VRF(marca,"la","marca")
-        atajo['Marca']=valorN
+        atajo['marca']=valorN
         cf.UpdateFile('data.json',activosdata)
     if op == '4':
         valorN = VRF(categoria,"la","categoria")
-        atajo['Categoria']=valorN
+        atajo['categoria']=valorN
         cf.UpdateFile('data.json',activosdata)
     if op == '5':
         valorN = VRF(tipo,"el","tipo")
-        atajo['Tipo']=valorN
+        atajo['tipo']=valorN
         cf.UpdateFile('data.json',activosdata)
     if op == '6':
         isrun6 = True
@@ -133,19 +133,19 @@ def updateActivos(activosdata:dict):
                     pass
                 isrun6 = False
             
-        atajo['VlrUnitario']=valorN
+        atajo['vlrUnitario']=valorN
         cf.UpdateFile('data.json',activosdata)
     if op == '7':
         valorN = input('Ingrese el nuevo proveedor : ')
-        atajo['Proveedor']=valorN
+        atajo['proveedor']=valorN
         cf.UpdateFile('data.json',activosdata)
     if op == '8':
         valorN = input('Ingrese el nuevo numero serial : ')
-        atajo['NroSerial']=valorN
+        atajo['nroSerial']=valorN
         cf.UpdateFile('data.json',activosdata)
     if op == '9':
         valorN = input('Ingrese la nueva empresa responsable : ')
-        atajo['Empresaresponsable']=valorN
+        atajo['empresaresponsable']=valorN
         cf.UpdateFile('data.json',activosdata)
 
 def delActivos(inventario : dict):

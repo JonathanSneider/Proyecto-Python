@@ -97,10 +97,12 @@ def añadirasignacion(inventario):
             os.system('pause')
             continue
         
-        elif (inventario['Activos'][Activos]['Estado'] == "No Asignado"):
+        elif (inventario['Activos'][Activos]['estado'] == "No Asignado"):
             activoss.append(Activos)
             contador += 1
-            if contador == inventario['Zonas'][AsigandoA]['TotalCapacidad']:
+            if TipoAsignacion == "Persona":
+                pass
+            elif contador == inventario['Zonas'][AsigandoA]['TotalCapacidad']:
                 print('Se a superado la capicidad de la zona')
                 os.system('pause')
                 isrunasg = False
@@ -140,7 +142,7 @@ def añadirasignacion(inventario):
             "idRespMov":idperasig
         }
         inventario['Activos'][value]['historialActivo'].update({nrohistorial:historialactivos})
-        inventario['Activos'][value]['Estado'] = "Asignado"
+        inventario['Activos'][value]['estado'] = "Asignado"
         cf.UpdateFile('data.json',inventario)
     inventario['Asignacion'].update({NroAsignacion:asignacion})
     cf.UpdateFile('data.json',inventario)

@@ -22,7 +22,6 @@ inventario = cf.checkFile("data.json",dataa)
 #cf.UpdateFile('data.json', inventario)
 
 if __name__ == "__main__":
-   
     Runpro = True
     while Runpro:
         op = mn.menuPrincipal()
@@ -185,15 +184,39 @@ if __name__ == "__main__":
                         rtar4 = 'x'
                         while (rtar4 not in ['N','n','']):
                             rtar4 = input('Desea Regresar al Menu de reportes No(n/N) Enter(si) Regresar :')
-                            isrinRA = bool(rtar4)
+                            isrunRA = bool(rtar4)
                 if op5 == "2":
-                    pass
+                    isrunRE2 = True
+                    while isrunRE2:
+                        rp.ActivosCate(inventario)
+                        rtar42 = 'x'
+                        while (rtar42 not in ['N','n','']):
+                            rtar42 = input('Desea Regresar al Menu de reportes No(n/N) Enter(si) Regresar :')
+                            isrunRE2 = bool(rtar42)
                 if op5 == "3":
-                    pass
+                    isrunRE3 = True
+                    while isrunRE3:
+                        rp.activosdadobaja(inventario)
+                        rtar42s = 'x'
+                        while (rtar42s not in ['N','n','']):
+                            rtar42s = input('Desea Regresar al Menu de reportes No(n/N) Enter(si) Regresar :')
+                            isrunRE3 = bool(rtar42s)
                 if op5 == "4":
-                    pass
+                    isrunrp4 = True
+                    while isrunrp4:
+                        rp.activosyasignacion(inventario)
+                        rtar42sxs = 'x'
+                        while (rtar42sxs not in ['N','n','']):
+                            rtar42sxs = input('Desea Regresar al Menu de reportes No(n/N) Enter(si) Regresar :')
+                            isrunrp4 = bool(rtar42sxs)
                 if op5 == "5":
-                    pass
+                    isrunRE55 = True
+                    while isrunRE55:
+                        rp.historialamov(inventario)
+                        rtar42ss = 'x'
+                        while (rtar42ss not in ['N','n','']):
+                            rtar42ss = input('Desea Regresar al Menu de reportes No(n/N) Enter(si) Regresar :')
+                            isrunRE55 = bool(rtar42ss)
                 if op5 == "6":
                     rta5 = 'x'
                     while (rta5 not in ['N','n','']):

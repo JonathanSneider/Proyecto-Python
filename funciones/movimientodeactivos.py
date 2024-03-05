@@ -6,7 +6,7 @@ def retornodeactivos(inventario):
     print('Ingrese el codigo de campus del activo que sea retornar')
     codCampus = cf.Search(inventario, 'Activos')
     atajo = inventario['Activos'][codCampus]
-    if atajo['Estado'] == "Asignado" or atajo['Estado'] == "No Asignado" or atajo['Estado'] == "Dado de Baja":
+    if atajo['estado'] == "Asignado" or atajo['estado'] == "No Asignado" or atajo['estado'] == "Dado de Baja":
         print('Este activo no se puede retornar')
         os.system('pause')
         return
@@ -68,12 +68,8 @@ def retornodeactivos(inventario):
         "idRespMov":idperasig
     }
     inventario['Activos'][codCampus]['historialActivo'].update({nrohistorial:historialactivos})
-    comparacion = int(len(atajo['historialActivo']))
-    if comparacion < 0:        
-        atajo['Estado']= "No asignado"
-    else:
-        atajo['Estado']= "Asigando"
-    
+    comparacion = int(len(atajo['historialActivo']))     
+    atajo['estado']= "No asignado"
     cf.UpdateFile('data.json',inventario)
 
 def dardebajAc(inventario:dict):
@@ -137,7 +133,7 @@ def dardebajAc(inventario:dict):
     }
     inventario['Activos'][codCampus]['historialActivo'].update({nrohistorial:historialactivos})
     atajo = inventario['Activos'][codCampus]
-    atajo['Estado']= "Dado de Baja"
+    atajo['estado']= "Dado de Baja"
     cf.UpdateFile('data.json',inventario)
     
 def garantiact(inventario:dict):
@@ -145,7 +141,7 @@ def garantiact(inventario:dict):
     print('Ingrese el codigo de campus del activo que desea dar en garantia')
     codCampus = cf.Search(inventario, 'Activos')
     atajo = inventario['Activos'][codCampus]
-    if atajo['Estado'] == "Dado de Baja":
+    if atajo['estado'] == "Dado de Baja":
         print('no se puede dar en garantia este activo')
         os.system('pause')
         return
@@ -207,12 +203,14 @@ def garantiact(inventario:dict):
         "idRespMov":idperasig
     }
     inventario['Activos'][codCampus]['historialActivo'].update({Nrohistorial:historialactivos})
-    atajo['Estado']= "En Garantia"
+    atajo['estado']= "En Garantia"
     cf.UpdateFile('data.json',inventario)
     
 def cambiarasignacion(inventario:dict):
     print('Ingrese el codigo de campus del activo el cual desea reasignar')
     valor = cf.Search(inventario, 'Activos')
+    valors = []
+    valors.append(valor)
     try:
         dia = int(input('ingrese el dia de asignacion : '))
     except ValueError:
@@ -303,7 +301,7 @@ def cambiarasignacion(inventario:dict):
         "FechaAsignacion":fecha,
         "TipoAsignacion":TipoAsignacion,
         "AsignadoA":AsigandoA,
-        "Activos":valor
+        "Activos":valors
         
     }
     nrohistorial = str(len(inventario['Activos'][valor]['historialActivo'])+1).zfill(3)
@@ -319,12 +317,17 @@ def cambiarasignacion(inventario:dict):
             for keyy,value in enumerate(value['Activos']):
                 if valor == value:
                     valorr = keyy
-            del inventario['Asignacion'][key]['Activos'][valorr]
+            try:
+                del inventario['Asignacion'][key]['Activos'][valorr]
+            except TypeError:
+                print(f'No se puede asiganar este activo a la {TipoAsignacion}')
+                os.system('pause')
+                return
             break
         else:
             pass
     inventario['Activos'][valor]['historialActivo'].update({nrohistorial:historialactivos})
-    inventario['Activos'][valor]['Estado'] = "Asignado"
+    inventario['Activos'][valor]['estado'] = "Asigando"
     inventario['Asignacion'].update({NroAsignacion:asignacion})
     cf.UpdateFile('data.json',inventario)
     
