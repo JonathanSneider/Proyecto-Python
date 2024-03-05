@@ -27,7 +27,14 @@ inventario = cf.checkFile("data.json",dataa)
 if __name__ == "__main__":
     Runpro = True
     while Runpro:
-        op = mn.menuPrincipal()
+        try:
+            op = mn.menuPrincipal()
+        except KeyboardInterrupt:
+            print('No se vale CTRL + C')
+            os.system('pause')
+            continue
+        else:
+            pass
         if op == "1":
             Run1 = True
             while Run1:
